@@ -1,0 +1,9 @@
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/CMakeFiles/rebuild_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/CMakeFiles/edit_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/lib/lodePNG/CMakeFiles/rebuild_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/lib/lodePNG/CMakeFiles/edit_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/lib/lodePNG/CMakeFiles/lodePNG.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/src/CMakeFiles/rebuild_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/src/CMakeFiles/edit_cache.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/src/CMakeFiles/debug_aabb.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/assignment_0/build/src/CMakeFiles/raytrace.dir
