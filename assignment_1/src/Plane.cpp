@@ -41,8 +41,33 @@ intersect(const Ray& _ray,
      * - otherwise compute intersection data and store it in `_intersection_point`, `_intersection_normal`, and `_intersection_t`.
      * - return whether there is an intersection in front of the viewer (t > 0)
     */
+    vec3 d = _ray.direction;
+    vec3 n = normal;
+    vec3 o = _ray.origin;
+    vec3 c = center;
+    vec3 co = (c-o);
+    
+    double t = dot(n,d);
+    
 
-    return false;
+    if(t == 0) {
+        return false;
+    }
+
+    t = dot(n,co)/dot(n,d);
+    _intersection_t = t;
+
+    _intersection_point = o + t*d; 
+    _intersection_normal = n;
+    if(t == 0){
+        return false;
+    }
+    if(_intersection_t < 0) {
+        return false;
+    }
+
+  
+    return true;
 }
 
 
