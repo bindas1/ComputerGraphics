@@ -47,25 +47,19 @@ intersect(const Ray& _ray,
     vec3 c = center;
     vec3 co = (c-o);
     
-    double t = dot(n,d);
-    
+    double dot_n_d = dot(n,d);   
 
-    if(t == 0) {
+    if(dot_n_d == 0) {
         return false;
     }
 
-    t = dot(n,co)/dot(n,d);
-    _intersection_t = t;
-
-    _intersection_point = o + t*d; 
+    _intersection_t = dot(n,co)/dot_n_d;
+    _intersection_point = o + _intersection_t*d; 
     _intersection_normal = n;
-    if(t == 0){
-        return false;
-    }
-    if(_intersection_t < 0) {
-        return false;
-    }
 
+    if(_intersection_t <= 0){
+        return false;
+    }
   
     return true;
 }
