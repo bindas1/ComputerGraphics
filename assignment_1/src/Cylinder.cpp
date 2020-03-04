@@ -35,62 +35,44 @@ intersect(const Ray&  _ray,
     */
     
 
-    vec3 v = _ray.direction;
-    vec3 temp_v = (v - dot(v, axis) * axis); 	
-    int big_a = dot(temp_v, temp_v);
-    vec3 left = v-dot(v, axis)*axis;
-    vec3 delta_p = _ray.origin - center;
-    vec3 right = delta_p - dot(delta_p, axis) * axis;
-    int big_b = 2 *dot(left, right);
-    vec3 temp_v2 = delta_p - dot(delta_p, axis)*axis;
-    int big_c = dot(temp_v2, temp_v2) - radius*radius;
+    const vec3 d = _ray.direction;
+    const vec3 a = axis; //todo make unitary 
+    const vec3 o = _ray.origin;
+    const vec3 c = center;
+    const double r = radius;
+    const vec3 projonaxis = dot(o - c, a)*a; 
+    const vec3 verticalv = dot(d,a)*a;
 
     std::array<double, 2> t;
     size_t number_of_solutions = solveQuadratic(
-        big_a,
-	big_b,
-	big_c,
+        dot(d - verticalv, d - verticalv),
+	2*dot(d-verticalv,(o-c)-projonaxis),
+	dot((o-c)-projonaxis, (o-c)-projonaxis) - r*r,
 	t // where to store solutions
     );
 
-    
-    //    //vec3 d = _ray.direction;
-//    vec3 o = _ray.origin;
-//    vec3 c = center;
-//    vec3 a = axis; //todo make unitary 
-//    double r = radius;
-//    double h = height;
-//
-//
-//    vec3 b = dot((o-c), a)*a ;//+ c;
-//    
-//    const vec3 d = _ray.direction;
-//    const vec3 ob = _ray.origin - b;
-//
-//    std::array<double, 2> t;
-//    size_t number_of_solutions = solveQuadratic(
-//        dot(d, d), // t^2 * ||d||^2
-//        2 * dot(d, ob), // t * (2d dot (o - c))
-//        dot(ob, ob) - radius * radius, // ||o-c||^2 - r^2
-//        t // where to store solutions
-//    );
-//    
     // Initialize the intersection distance to "infinity" (indicating no intersection)
     _intersection_t = NO_INTERSECTION;
     
     // Find the closest valid (in front of the viewer) intersection, if one exists
+
     for (size_t i = 0; i < number_of_solutions; i++) {
-        const double t_solution = t[i];
-        // t <= 0 means the intersection is behind the camera
-        if ((t_solution > 0) && (t_solution < _intersection_t))
-        _intersection_t = t_solution;
+      const vec3 VXonAxis = dot(_ray(t[i]) - c,a) * a;
+      const double lengthofVX = norm(VXonAxis);
+      if (t[i] > 0 && lengthofVX < height/2.0){
+        _intersection_t = t[i];
+	_intersection_normal = normalize(_ray(t[i]) - c - VXonAxis);
+	if (dot(d, _intersection_normal) > 0){
+	  _intersection_normal = -1 * _intersection_normal;
+	}
+      }
     }
    
     // Nothing to do if we don't have an intersection...
     if (_intersection_t == NO_INTERSECTION) return false;
-    // Otherwise, calculate information about the intersection
-    _intersection_point = _ray.origin + _intersection_t*_ray.direction; 
-    _intersection_normal = _intersection_point - center;
 
+    // Otherwise, calculate information about the intersection
+    _intersection_point = _ray(_intersection_t); 
+    
     return true;
 }
