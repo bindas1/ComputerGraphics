@@ -15,10 +15,10 @@ x = o + td
 r = radius
 
 verticalv = (d.a)a
-projonaxis = (o-c.a)a  - vector from c to the projection of o on the vector a 
+projonaxis = (o-c.a)a  - vector from c to the projection of o on the vector a
 
-d-verticalp is projection of the d vector on the plane perpendicular to the vector a passing by o
-c+projonaxis is the projection of o on the vector a 
+d-verticalv is projection of the d vector on the plane perpendicular to the vector a passing by o
+c+projonaxis is the projection of o on the vector a
 
 From equation:
 ||o+t(d-verticalv)-(c+projonaxis)|| - r = 0
@@ -28,13 +28,7 @@ If we square the equation:
 We derive the quadratic equation solvable for t:
 t^2(d-verticalv.d-verticalv) + 2t(d-verticalv)(o-c-projonaxis) + (o-c-projonaxis.o-c-projonaxis) - r^2 = 0
 
-Solving the equation we get the values of t which satisfy the first equation. 
+Solving the equation we get the values of t which satisfy the first equation.
 From t we get our intersection points, but we must constrain the length of the vector VXonAxis to be of length less than height / 2 and bigger than 0.
 
-Finally to assign value to _intersection_normal we use ternary operator.
-We want the normal vector to be pointing outwards so in the last line we change the sign to the opposite one if num_sol > 1 && _intersection_t == std::max(t[0], t[1])  
-
-_intersection_normal = num_sol > 1 && _intersection_t == std::max(t[0], t[1]) ? -n : n;
-
-
-
+Finally, to assign value to _intersection_normal, we want the normal vector to be pointing outwards. So we change the sign to the opposite if the normal is pointing to the same direction as the ray (dot product of the ray direction and the normal of the plane > 0)
