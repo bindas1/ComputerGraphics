@@ -60,11 +60,11 @@ intersect(const Ray&  _ray,
       const vec3 VXonAxis = dot(_ray(t[i]) - c,a) * a;
       const double lengthofVX = norm(VXonAxis);
       if (t[i] > 0 && lengthofVX < height/2.0){
-        _intersection_t = t[i];
-	_intersection_normal = normalize(_ray(t[i]) - c - VXonAxis);
-	if (dot(d, _intersection_normal) > 0){
-	  _intersection_normal = -1 * _intersection_normal;
-	}
+          _intersection_t = t[i];
+          _intersection_normal = normalize(_ray(t[i]) - c - VXonAxis);
+          if (dot(d, _intersection_normal) > 0) {
+          _intersection_normal = -1 * _intersection_normal;
+          }
       }
     }
    
