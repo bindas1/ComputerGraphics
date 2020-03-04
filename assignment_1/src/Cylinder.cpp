@@ -36,7 +36,7 @@ intersect(const Ray&  _ray,
     
 
     const vec3 d = _ray.direction;
-    const vec3 a = axis; //todo make unitary 
+    const vec3 a = axis; 
     const vec3 o = _ray.origin;
     const vec3 c = center;
     const double r = radius;
