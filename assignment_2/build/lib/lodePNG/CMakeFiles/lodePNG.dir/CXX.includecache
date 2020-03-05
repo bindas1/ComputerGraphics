@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp
 lodepng.h
-/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
 stdio.h
 -
 stdlib.h
@@ -16,7 +16,7 @@ stdlib.h
 fstream
 -
 
-/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
 string.h
 -
 vector
@@ -24,9 +24,9 @@ vector
 string
 -
 lodepng.h
-/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
 iostream
 -
 lodepng.h
-/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h
 

@@ -1,0 +1,1206 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		413B1DC48D1F4A17A713DAD3 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 69998F28F07C4C8A99A64DAA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				3A3D4F58A95040ABB207C868 /* CMake Rules */,
+			);
+			dependencies = (
+				57DA4ADD262D44B9ADEF87C8 /* PBXTargetDependency */,
+				6FF9FF537D424CD991E3493E /* PBXTargetDependency */,
+				7F557CFF33714965B6FF1D92 /* PBXTargetDependency */,
+				59F4053294D84288AF14FAC4 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		B4EF049B17D744C89D086FBA /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DFDFA68930A04C15A8B97466 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				C7FB21B6A3C34CF79BDD101B /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		04E2D6FFD8894654A06A7414 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */ = {isa = PBXBuildFile; fileRef = 570F31544611421391A21BFC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */; };
+		07F6E8DE54FE44FA8DC21DA6 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */ = {isa = PBXBuildFile; fileRef = 916ABFFCA26F46EB960FA61B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */; };
+		1056C1760D7C4B3EB266E1BE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */ = {isa = PBXBuildFile; fileRef = 56A2953E791A49FFB79FC8F4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */; };
+		10F4EAE16E204A33A6F10366 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */ = {isa = PBXBuildFile; fileRef = EC979564D1464D38914650FE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */; };
+		15DA754CD8CA4143B5B12BBC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */ = {isa = PBXBuildFile; fileRef = BD4E20EB38BD4D8898E7DB76 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */; };
+		15DD36513A9943E884C9DB56 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */ = {isa = PBXBuildFile; fileRef = 083038B37AEA4DBCA0F088BE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */; };
+		196941E871204F92B3B632B0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/debug_aabb.cpp */ = {isa = PBXBuildFile; fileRef = 2F88C66884C9448B91A438DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/debug_aabb.cpp */; };
+		1CF75A439D8C4CA1A9F1CFA4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */ = {isa = PBXBuildFile; fileRef = BADF7AF33CEC4E00BC900E71 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */; };
+		20C90F637149416497055F4C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */ = {isa = PBXBuildFile; fileRef = 59872F65E96C4634A605810B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */; };
+		22342B2E293A48CA9F56F572 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */ = {isa = PBXBuildFile; fileRef = 36B62839FB754EF9A80E13DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */; };
+		227B5819E0B54665A130DF81 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */ = {isa = PBXBuildFile; fileRef = A4CA6F8D7F5E40E1BA8C22CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */; };
+		307281B3E02343E58E3D8126 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */ = {isa = PBXBuildFile; fileRef = 330A290DFBD549AFA0CE8162 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */; };
+		347948C340E5428CA6F85194 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */ = {isa = PBXBuildFile; fileRef = 90B148FA4FA648CD9116A1CB /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */; };
+		36597209B05A45608C89FEE4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp */ = {isa = PBXBuildFile; fileRef = 5B75F159E7E04BF3AD1CA5DC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp */; };
+		3840D99713A948C99D339405 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */ = {isa = PBXBuildFile; fileRef = BA68CCE0A8BA441EB549E054 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */; };
+		3EE2056BEA124FB69C5AC2D1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/raytrace.cpp */ = {isa = PBXBuildFile; fileRef = 5E92BFFEE737456FACC5DC56 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/raytrace.cpp */; };
+		48D36A2685694218AA012E68 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */ = {isa = PBXBuildFile; fileRef = 73F5DF6948814C2FA1941704 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */; };
+		4BCB4B13B78C4C6B8D3C4097 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */ = {isa = PBXBuildFile; fileRef = 0D8DEBAFBDEF48449EBA7152 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */; };
+		4EF358F13A54479E90417858 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */ = {isa = PBXBuildFile; fileRef = 94FDCB4908D642E5A67CACA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */; };
+		54C9CC0BDE904F4380178B0E /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */ = {isa = PBXBuildFile; fileRef = 48A9B7EE1AD346DFA93ABF24 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */; };
+		6102EFA4EAFB4AB1ABF67775 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */ = {isa = PBXBuildFile; fileRef = 643C30B672774549BD12A91A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */; };
+		616454A66A264FB3A3372B5D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */ = {isa = PBXBuildFile; fileRef = E3E1B3EAE10C4B0A81F527BC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */; };
+		6172C922024C4DD6AD38FE57 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */ = {isa = PBXBuildFile; fileRef = BE403155F7A94279AE4CE6D3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */; };
+		63B5AA8277DB4B3382C93A6E /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */ = {isa = PBXBuildFile; fileRef = 8863BA935E184F61AF498243 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */; };
+		642939B0217546D8AD36F2BC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h */ = {isa = PBXBuildFile; fileRef = C47FC0E29A4B4CFAB1EB11CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h */; };
+		6AF581BAB4064372BB023F99 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */ = {isa = PBXBuildFile; fileRef = F388589EC4AF461B926251B1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */; };
+		6B23CF98917549F2955737F5 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = FFF3B7E7AC25492F87564924 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */; };
+		70995D02002E418D8F74938A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */ = {isa = PBXBuildFile; fileRef = 91D5E5E74B40475A8AD99C03 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */; };
+		7292677B9E58440DA87A9331 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */ = {isa = PBXBuildFile; fileRef = A75BC174107D4EE39C487721 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */; };
+		7A1D8B06957D4E9F90E25870 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */ = {isa = PBXBuildFile; fileRef = BEE66071472F4DD28073A4F1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */; };
+		7CA24B0AD8544BE4A67274A8 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */ = {isa = PBXBuildFile; fileRef = 4E64C908BCB64981A379C48A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */; };
+		7D393206706B431088526AE3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */ = {isa = PBXBuildFile; fileRef = 6AA960D53FC24409AA6C4F70 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */; };
+		808E9633C60E4D3383896A66 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */ = {isa = PBXBuildFile; fileRef = 532D53FFD9B34F3BAD208F77 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */; };
+		85296E5F4B7745EA951B0314 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = BC15D92BD4FF4F129CAB1016 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/CMakeLists.txt */; };
+		89F6838CE51647478B2FE934 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */ = {isa = PBXBuildFile; fileRef = D2EC9725D4544F50B7F8E998 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */; };
+		92869C73206C447DA30DEA9F /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */ = {isa = PBXBuildFile; fileRef = 06C2A8DCC8FA41F1BB56CE31 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */; };
+		93C4D3711C6040928F111526 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */ = {isa = PBXBuildFile; fileRef = 4FF96A918FD84263A663CD95 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */; };
+		98351C9C8CC6478FAA8CA614 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */ = {isa = PBXBuildFile; fileRef = 8ADF3271BB344C00BD2CB248 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */; };
+		A23EA7A65F9B46168F32F862 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */ = {isa = PBXBuildFile; fileRef = 43AB52912F074C1F83FB05C1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */; };
+		A5A730627CF84D7C950FE427 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 611FADD086BA4B039AAAFD8D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */; };
+		BD3764E24EC540B7B4F13581 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */ = {isa = PBXBuildFile; fileRef = 2BDBA6904FDF4A86B0CB9C04 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */; };
+		BD8808F62F41420FBC757A20 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */ = {isa = PBXBuildFile; fileRef = 08958FE928E84851ACDFDFA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */; };
+		C5B6A3F3A6D94B7182790B3C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */ = {isa = PBXBuildFile; fileRef = E13FDA5C44314906BC897B97 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */; };
+		C9DCDFED30344DD2BE89F9D2 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */ = {isa = PBXBuildFile; fileRef = 56E246C5204848C39A11E4E9 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */; };
+		D1E278EF6A8F4015A87A8285 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */ = {isa = PBXBuildFile; fileRef = 1AB4059DE2A04DC589DBC24C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */; };
+		D3F1477D2D504CC2B759AA63 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */ = {isa = PBXBuildFile; fileRef = C6DB00787622478A9CAA09B3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */; };
+		E7A0FB62E24440F2A52A5DD4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */ = {isa = PBXBuildFile; fileRef = 0B8F8F8E2AD74632A54A015D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */; };
+		F162199DCC0B46DEA55AFEC8 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */ = {isa = PBXBuildFile; fileRef = D9374C828D89417CBEACBFD3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */; };
+		F80047C3D9DA4E7E987DB169 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */ = {isa = PBXBuildFile; fileRef = 3CD4D3AE7B8E4729A9E0E97F /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		A90319DF471448A19B10B10B /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		B4CEEE90F19F4885B09E589B /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		BE795B930C2D47788F3A1D70 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		D810B91374114A26959776ED /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		1BDAFD7DEDBD43AC9F384B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F077D1BB90AD4EDA93F7D331;
+			remoteInfo = lodePNG;
+		};
+		3FE41ABBEAB448F3A245D684 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F077D1BB90AD4EDA93F7D331;
+			remoteInfo = lodePNG;
+		};
+		4137530E2BA04C52BF795E49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4EF049B17D744C89D086FBA;
+			remoteInfo = ZERO_CHECK;
+		};
+		609300BA233D4849AF63CA4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4EF049B17D744C89D086FBA;
+			remoteInfo = ZERO_CHECK;
+		};
+		634BC7C78E8940EC96C9BAD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DB5306789494C928A721AED;
+			remoteInfo = debug_aabb;
+		};
+		64BBC222522E4423B73F2E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4EF049B17D744C89D086FBA;
+			remoteInfo = ZERO_CHECK;
+		};
+		7125594D5CC948128ED2C7BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 735EF470C0FA45668CF3998A;
+			remoteInfo = raytrace;
+		};
+		B832F72526A14DE68CF40572 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4EF049B17D744C89D086FBA;
+			remoteInfo = ZERO_CHECK;
+		};
+		F896AA6874374003AB59AC7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3301136049A541648F58C4CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F077D1BB90AD4EDA93F7D331;
+			remoteInfo = lodePNG;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06C2A8DCC8FA41F1BB56CE31 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Object.h; path = src/Object.h; sourceTree = SOURCE_ROOT; };
+		083038B37AEA4DBCA0F088BE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Cylinder.h; path = src/Cylinder.h; sourceTree = SOURCE_ROOT; };
+		08958FE928E84851ACDFDFA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh.cpp; path = src/Mesh.cpp; sourceTree = SOURCE_ROOT; };
+		0B8F8F8E2AD74632A54A015D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Mesh.h; path = src/Mesh.h; sourceTree = SOURCE_ROOT; };
+		0BD64F4856684CC383FD479B /* raytrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = raytrace; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D8DEBAFBDEF48449EBA7152 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SolveQuadratic.h; path = src/SolveQuadratic.h; sourceTree = SOURCE_ROOT; };
+		0E31D761D7F14DCFA7FEAB3C /* debug_aabb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = debug_aabb; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB4059DE2A04DC589DBC24C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Cylinder.cpp; path = src/Cylinder.cpp; sourceTree = SOURCE_ROOT; };
+		2BDBA6904FDF4A86B0CB9C04 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Object.h; path = src/Object.h; sourceTree = SOURCE_ROOT; };
+		2F88C66884C9448B91A438DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/debug_aabb.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = debug_aabb.cpp; path = src/debug_aabb.cpp; sourceTree = SOURCE_ROOT; };
+		330A290DFBD549AFA0CE8162 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
+		36B62839FB754EF9A80E13DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vec3.cpp; path = src/vec3.cpp; sourceTree = SOURCE_ROOT; };
+		3CD4D3AE7B8E4729A9E0E97F /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = src/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		43AB52912F074C1F83FB05C1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = StopWatch.h; path = src/StopWatch.h; sourceTree = SOURCE_ROOT; };
+		48A9B7EE1AD346DFA93ABF24 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
+		4E64C908BCB64981A379C48A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Plane.cpp; path = src/Plane.cpp; sourceTree = SOURCE_ROOT; };
+		4FF96A918FD84263A663CD95 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Sphere.h; path = src/Sphere.h; sourceTree = SOURCE_ROOT; };
+		532D53FFD9B34F3BAD208F77 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Plane.h; path = src/Plane.h; sourceTree = SOURCE_ROOT; };
+		56A2953E791A49FFB79FC8F4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vec3.cpp; path = src/vec3.cpp; sourceTree = SOURCE_ROOT; };
+		56E246C5204848C39A11E4E9 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = vec3.h; path = src/vec3.h; sourceTree = SOURCE_ROOT; };
+		570F31544611421391A21BFC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = src/Camera.h; sourceTree = SOURCE_ROOT; };
+		59872F65E96C4634A605810B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Ray.h; path = src/Ray.h; sourceTree = SOURCE_ROOT; };
+		5B75F159E7E04BF3AD1CA5DC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lodepng.cpp; path = lib/lodePNG/lodepng.cpp; sourceTree = SOURCE_ROOT; };
+		5E92BFFEE737456FACC5DC56 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/raytrace.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = raytrace.cpp; path = src/raytrace.cpp; sourceTree = SOURCE_ROOT; };
+		611FADD086BA4B039AAAFD8D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		643C30B672774549BD12A91A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Mesh.h; path = src/Mesh.h; sourceTree = SOURCE_ROOT; };
+		6AA960D53FC24409AA6C4F70 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Material.h; path = src/Material.h; sourceTree = SOURCE_ROOT; };
+		73F5DF6948814C2FA1941704 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SolveQuadratic.h; path = src/SolveQuadratic.h; sourceTree = SOURCE_ROOT; };
+		8863BA935E184F61AF498243 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = src/Scene.h; sourceTree = SOURCE_ROOT; };
+		8ADF3271BB344C00BD2CB248 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sphere.cpp; path = src/Sphere.cpp; sourceTree = SOURCE_ROOT; };
+		90B148FA4FA648CD9116A1CB /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Image.cpp; path = src/Image.cpp; sourceTree = SOURCE_ROOT; };
+		916ABFFCA26F46EB960FA61B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = src/Scene.h; sourceTree = SOURCE_ROOT; };
+		91D5E5E74B40475A8AD99C03 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = src/Camera.h; sourceTree = SOURCE_ROOT; };
+		94FDCB4908D642E5A67CACA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Light.h; path = src/Light.h; sourceTree = SOURCE_ROOT; };
+		A4CA6F8D7F5E40E1BA8C22CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Cylinder.cpp; path = src/Cylinder.cpp; sourceTree = SOURCE_ROOT; };
+		A75BC174107D4EE39C487721 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Image.cpp; path = src/Image.cpp; sourceTree = SOURCE_ROOT; };
+		B7D7D033B190412EA0FE4BE6 /* lodePNG */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = liblodePNG.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA68CCE0A8BA441EB549E054 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sphere.cpp; path = src/Sphere.cpp; sourceTree = SOURCE_ROOT; };
+		BAC2F63C51CE44C995F141EC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BADF7AF33CEC4E00BC900E71 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = vec3.h; path = src/vec3.h; sourceTree = SOURCE_ROOT; };
+		BC15D92BD4FF4F129CAB1016 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = lib/lodePNG/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BD4E20EB38BD4D8898E7DB76 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = StopWatch.h; path = src/StopWatch.h; sourceTree = SOURCE_ROOT; };
+		BE403155F7A94279AE4CE6D3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Image.h; path = src/Image.h; sourceTree = SOURCE_ROOT; };
+		BEE66071472F4DD28073A4F1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Ray.h; path = src/Ray.h; sourceTree = SOURCE_ROOT; };
+		C47FC0E29A4B4CFAB1EB11CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = lodepng.h; path = lib/lodePNG/lodepng.h; sourceTree = SOURCE_ROOT; };
+		C6DB00787622478A9CAA09B3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Material.h; path = src/Material.h; sourceTree = SOURCE_ROOT; };
+		D2EC9725D4544F50B7F8E998 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Image.h; path = src/Image.h; sourceTree = SOURCE_ROOT; };
+		D9374C828D89417CBEACBFD3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Light.h; path = src/Light.h; sourceTree = SOURCE_ROOT; };
+		E13FDA5C44314906BC897B97 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh.cpp; path = src/Mesh.cpp; sourceTree = SOURCE_ROOT; };
+		E3E1B3EAE10C4B0A81F527BC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = src/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		EC979564D1464D38914650FE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Cylinder.h; path = src/Cylinder.h; sourceTree = SOURCE_ROOT; };
+		F388589EC4AF461B926251B1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Sphere.h; path = src/Sphere.h; sourceTree = SOURCE_ROOT; };
+		FFF3B7E7AC25492F87564924 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2FA5C62787A54CC7B054E54D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B75F159E7E04BF3AD1CA5DC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		5325BD89078B4D738A6384C9 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				570F31544611421391A21BFC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */,
+				EC979564D1464D38914650FE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */,
+				D2EC9725D4544F50B7F8E998 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */,
+				94FDCB4908D642E5A67CACA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */,
+				C6DB00787622478A9CAA09B3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */,
+				643C30B672774549BD12A91A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */,
+				06C2A8DCC8FA41F1BB56CE31 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */,
+				330A290DFBD549AFA0CE8162 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */,
+				BEE66071472F4DD28073A4F1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */,
+				916ABFFCA26F46EB960FA61B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */,
+				73F5DF6948814C2FA1941704 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */,
+				4FF96A918FD84263A663CD95 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */,
+				BD4E20EB38BD4D8898E7DB76 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */,
+				BADF7AF33CEC4E00BC900E71 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		6F7EB30AC2D34845AB9773EB /* raytrace */ = {
+			isa = PBXGroup;
+			children = (
+				DF74B85101D84B1C99784C11 /* Source Files */,
+				5325BD89078B4D738A6384C9 /* Header Files */,
+				FFF3B7E7AC25492F87564924 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */,
+			);
+			name = raytrace;
+			sourceTree = "<group>";
+		};
+		7941D2B8984244C9B5E8CFD6 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				C47FC0E29A4B4CFAB1EB11CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		7965C72C211B426EA71375D1 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				91D5E5E74B40475A8AD99C03 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Camera.h */,
+				083038B37AEA4DBCA0F088BE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.h */,
+				BE403155F7A94279AE4CE6D3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.h */,
+				D9374C828D89417CBEACBFD3 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Light.h */,
+				6AA960D53FC24409AA6C4F70 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Material.h */,
+				0B8F8F8E2AD74632A54A015D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.h */,
+				2BDBA6904FDF4A86B0CB9C04 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Object.h */,
+				532D53FFD9B34F3BAD208F77 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.h */,
+				59872F65E96C4634A605810B /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Ray.h */,
+				8863BA935E184F61AF498243 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.h */,
+				0D8DEBAFBDEF48449EBA7152 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/SolveQuadratic.h */,
+				F388589EC4AF461B926251B1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.h */,
+				43AB52912F074C1F83FB05C1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/StopWatch.h */,
+				56E246C5204848C39A11E4E9 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		7EC43E4D31D4416DB611D864 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AB4059DE2A04DC589DBC24C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */,
+				90B148FA4FA648CD9116A1CB /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */,
+				08958FE928E84851ACDFDFA0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */,
+				48A9B7EE1AD346DFA93ABF24 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */,
+				3CD4D3AE7B8E4729A9E0E97F /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */,
+				8ADF3271BB344C00BD2CB248 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */,
+				2F88C66884C9448B91A438DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/debug_aabb.cpp */,
+				36B62839FB754EF9A80E13DA /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8D5687953F8D41979AF68FD4 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9550FF4F797A4EFC8A8CB171 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E31D761D7F14DCFA7FEAB3C /* debug_aabb */,
+				B7D7D033B190412EA0FE4BE6 /* lodePNG */,
+				0BD64F4856684CC383FD479B /* raytrace */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B71369650E54565B039B74F /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				8D5687953F8D41979AF68FD4 /* CMake Rules */,
+				BAC2F63C51CE44C995F141EC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		A4946528832941059294C813 = {
+			isa = PBXGroup;
+			children = (
+				9B71369650E54565B039B74F /* ALL_BUILD */,
+				A9D84E43BA7141059C8BD086 /* lodePNG */,
+				AB137D9FF9CD4DDB98F60829 /* debug_aabb */,
+				6F7EB30AC2D34845AB9773EB /* raytrace */,
+				9550FF4F797A4EFC8A8CB171 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9D84E43BA7141059C8BD086 /* lodePNG */ = {
+			isa = PBXGroup;
+			children = (
+				7941D2B8984244C9B5E8CFD6 /* Header Files */,
+				2FA5C62787A54CC7B054E54D /* Source Files */,
+				BC15D92BD4FF4F129CAB1016 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/CMakeLists.txt */,
+			);
+			name = lodePNG;
+			sourceTree = "<group>";
+		};
+		AB137D9FF9CD4DDB98F60829 /* debug_aabb */ = {
+			isa = PBXGroup;
+			children = (
+				7EC43E4D31D4416DB611D864 /* Source Files */,
+				7965C72C211B426EA71375D1 /* Header Files */,
+				611FADD086BA4B039AAAFD8D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/CMakeLists.txt */,
+			);
+			name = debug_aabb;
+			sourceTree = "<group>";
+		};
+		DF74B85101D84B1C99784C11 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4CA6F8D7F5E40E1BA8C22CC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */,
+				A75BC174107D4EE39C487721 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */,
+				E13FDA5C44314906BC897B97 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */,
+				4E64C908BCB64981A379C48A /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */,
+				E3E1B3EAE10C4B0A81F527BC /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */,
+				BA68CCE0A8BA441EB549E054 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */,
+				5E92BFFEE737456FACC5DC56 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/raytrace.cpp */,
+				56A2953E791A49FFB79FC8F4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DB5306789494C928A721AED /* debug_aabb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF6446D382BE4287B694D277 /* Build configuration list for PBXNativeTarget "debug_aabb" */;
+			buildPhases = (
+				14EF492D1897458AB6AB09B8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F64D8C26772841CE897780F9 /* PBXTargetDependency */,
+				E9617411E4264948BD9D0780 /* PBXTargetDependency */,
+			);
+			name = debug_aabb;
+			productName = debug_aabb;
+			productReference = 0E31D761D7F14DCFA7FEAB3C /* debug_aabb */;
+			productType = "com.apple.product-type.tool";
+		};
+		735EF470C0FA45668CF3998A /* raytrace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 890E1596526E495EB5713AAE /* Build configuration list for PBXNativeTarget "raytrace" */;
+			buildPhases = (
+				78A8357C02474DAF8335E2D1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C3E6BC8A9E5438C9DB1CA13 /* PBXTargetDependency */,
+				C71005C2E00E469FB5FEA808 /* PBXTargetDependency */,
+			);
+			name = raytrace;
+			productName = raytrace;
+			productReference = 0BD64F4856684CC383FD479B /* raytrace */;
+			productType = "com.apple.product-type.tool";
+		};
+		F077D1BB90AD4EDA93F7D331 /* lodePNG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE21E3B1862B484DA0EF8616 /* Build configuration list for PBXNativeTarget "lodePNG" */;
+			buildPhases = (
+				2F01C255FC154DD2839B468C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A96AB118B8214122AC04DF46 /* PBXTargetDependency */,
+			);
+			name = lodePNG;
+			productName = lodePNG;
+			productReference = B7D7D033B190412EA0FE4BE6 /* lodePNG */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3301136049A541648F58C4CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1130;
+			};
+			buildConfigurationList = 8DCF17560FA347819217E305 /* Build configuration list for PBXProject "RayTracing" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				B4CEEE90F19F4885B09E589B /* Debug */,
+				D810B91374114A26959776ED /* Release */,
+				A90319DF471448A19B10B10B /* MinSizeRel */,
+				BE795B930C2D47788F3A1D70 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = A4946528832941059294C813;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				413B1DC48D1F4A17A713DAD3 /* ALL_BUILD */,
+				B4EF049B17D744C89D086FBA /* ZERO_CHECK */,
+				6DB5306789494C928A721AED /* debug_aabb */,
+				F077D1BB90AD4EDA93F7D331 /* lodePNG */,
+				735EF470C0FA45668CF3998A /* raytrace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C0DF2631ED549CDA807CB4F = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		3A3D4F58A95040ABB207C868 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode -f /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		C7FB21B6A3C34CF79BDD101B /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode -f /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		D437420618C349F2A6769C41 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14EF492D1897458AB6AB09B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1E278EF6A8F4015A87A8285 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */,
+				347948C340E5428CA6F85194 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */,
+				BD8808F62F41420FBC757A20 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */,
+				54C9CC0BDE904F4380178B0E /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */,
+				F80047C3D9DA4E7E987DB169 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */,
+				98351C9C8CC6478FAA8CA614 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */,
+				196941E871204F92B3B632B0 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/debug_aabb.cpp */,
+				22342B2E293A48CA9F56F572 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F01C255FC154DD2839B468C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36597209B05A45608C89FEE4 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/lodepng.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78A8357C02474DAF8335E2D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227B5819E0B54665A130DF81 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Cylinder.cpp */,
+				7292677B9E58440DA87A9331 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Image.cpp */,
+				C5B6A3F3A6D94B7182790B3C /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Mesh.cpp */,
+				7CA24B0AD8544BE4A67274A8 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Plane.cpp */,
+				616454A66A264FB3A3372B5D /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Scene.cpp */,
+				3840D99713A948C99D339405 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/Sphere.cpp */,
+				3EE2056BEA124FB69C5AC2D1 /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/raytrace.cpp */,
+				1056C1760D7C4B3EB266E1BE /* /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/src/vec3.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C3E6BC8A9E5438C9DB1CA13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F077D1BB90AD4EDA93F7D331 /* lodePNG */;
+			targetProxy = F896AA6874374003AB59AC7A /* PBXContainerItemProxy */;
+		};
+		57DA4ADD262D44B9ADEF87C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F077D1BB90AD4EDA93F7D331 /* lodePNG */;
+			targetProxy = 1BDAFD7DEDBD43AC9F384B59 /* PBXContainerItemProxy */;
+		};
+		59F4053294D84288AF14FAC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4EF049B17D744C89D086FBA /* ZERO_CHECK */;
+			targetProxy = B832F72526A14DE68CF40572 /* PBXContainerItemProxy */;
+		};
+		6FF9FF537D424CD991E3493E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DB5306789494C928A721AED /* debug_aabb */;
+			targetProxy = 634BC7C78E8940EC96C9BAD7 /* PBXContainerItemProxy */;
+		};
+		7F557CFF33714965B6FF1D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 735EF470C0FA45668CF3998A /* raytrace */;
+			targetProxy = 7125594D5CC948128ED2C7BD /* PBXContainerItemProxy */;
+		};
+		A96AB118B8214122AC04DF46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4EF049B17D744C89D086FBA /* ZERO_CHECK */;
+			targetProxy = 64BBC222522E4423B73F2E45 /* PBXContainerItemProxy */;
+		};
+		C71005C2E00E469FB5FEA808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4EF049B17D744C89D086FBA /* ZERO_CHECK */;
+			targetProxy = 609300BA233D4849AF63CA4F /* PBXContainerItemProxy */;
+		};
+		E9617411E4264948BD9D0780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4EF049B17D744C89D086FBA /* ZERO_CHECK */;
+			targetProxy = 4137530E2BA04C52BF795E49 /* PBXContainerItemProxy */;
+		};
+		F64D8C26772841CE897780F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F077D1BB90AD4EDA93F7D331 /* lodePNG */;
+			targetProxy = 3FE41ABBEAB448F3A245D684 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01D2EB09E30C458EAECE03BB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		03928E9B921644DE96CE97F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		0DA8C1BAFE96419CAE4180D3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		0DD72FB2545F489E9E3CD384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/Release/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = raytrace;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		12C04C6168E546F69CA153C3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11        -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/RelWithDebInfo/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = debug_aabb;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		189E1D8845F64361AA704D2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		1CD92CA14D0A47A381D90503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/Release/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = debug_aabb;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		2F7C4D28F73C4B85965495D7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		33D89D3A5AF54C6BBADDBBEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		34EA2E4E13914AE29A979070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -fPIC -Wall -pedantic -ansi     ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lodePNG;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		35726FCBE8AC4CC2BE245FE1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11        -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/RelWithDebInfo/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = raytrace;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		69CAEE9C6FEB4EA1B3AF8983 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -fPIC -Wall -pedantic -ansi     -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lodePNG;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6E01EAB04E62412BBC6FC72C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -fPIC -Wall -pedantic -ansi        -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lodePNG;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		762BCF331FDF4DACA053872C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/Debug/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = debug_aabb;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7A5318DCAA1244A291325691 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9E02585F1DAB489CB985AB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/Debug/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = raytrace;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9F2C60BF8F534749BE4B9B94 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		ABFF4A17529348D3B5B21D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		B321442889C14D6D9813D9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -fPIC -Wall -pedantic -ansi     -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lodePNG;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		B644AEF820A748A684149C81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/build;
+			};
+			name = Release;
+		};
+		B713AD4008E34431B02C1DC3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/MinSizeRel/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = raytrace;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B8F6D32B13BE4FCBB235631A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EF0AF3417FFE4852A0CEAB63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/build;
+			};
+			name = Debug;
+		};
+		FBA63F8DA64A4A3FB1A0CC05 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/SYSTEM,/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/lib/lodePNG/.);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/MinSizeRel/liblodePNG.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = debug_aabb;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69998F28F07C4C8A99A64DAA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABFF4A17529348D3B5B21D3A /* Debug */,
+				03928E9B921644DE96CE97F3 /* Release */,
+				7A5318DCAA1244A291325691 /* MinSizeRel */,
+				01D2EB09E30C458EAECE03BB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		890E1596526E495EB5713AAE /* Build configuration list for PBXNativeTarget "raytrace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E02585F1DAB489CB985AB87 /* Debug */,
+				0DD72FB2545F489E9E3CD384 /* Release */,
+				B713AD4008E34431B02C1DC3 /* MinSizeRel */,
+				35726FCBE8AC4CC2BE245FE1 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8DCF17560FA347819217E305 /* Build configuration list for PBXProject "RayTracing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF0AF3417FFE4852A0CEAB63 /* Debug */,
+				B644AEF820A748A684149C81 /* Release */,
+				0DA8C1BAFE96419CAE4180D3 /* MinSizeRel */,
+				9F2C60BF8F534749BE4B9B94 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CE21E3B1862B484DA0EF8616 /* Build configuration list for PBXNativeTarget "lodePNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34EA2E4E13914AE29A979070 /* Debug */,
+				B321442889C14D6D9813D9DD /* Release */,
+				69CAEE9C6FEB4EA1B3AF8983 /* MinSizeRel */,
+				6E01EAB04E62412BBC6FC72C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DF6446D382BE4287B694D277 /* Build configuration list for PBXNativeTarget "debug_aabb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762BCF331FDF4DACA053872C /* Debug */,
+				1CD92CA14D0A47A381D90503 /* Release */,
+				FBA63F8DA64A4A3FB1A0CC05 /* MinSizeRel */,
+				12C04C6168E546F69CA153C3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DFDFA68930A04C15A8B97466 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D89D3A5AF54C6BBADDBBEB /* Debug */,
+				189E1D8845F64361AA704D2D /* Release */,
+				2F7C4D28F73C4B85965495D7 /* MinSizeRel */,
+				B8F6D32B13BE4FCBB235631A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3301136049A541648F58C4CB /* Project object */;
+}

@@ -20,6 +20,7 @@
 #include <map>
 #include <functional>
 #include <stdexcept>
+#include <cmath>
 
 #if HAS_TBB
 #include <tbb/tbb.h>
@@ -143,9 +144,28 @@ vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view,
      * You can look at the classes `Light` and `Material` to check their attributes. Feel free to use
      * the existing vector functions in vec3.h e.g. mirror, reflect, norm, dot, normalize
      */
-
+    
+    vec3 intens = _material.ambient * ambience;
+    
+    for(auto l:lights){
+        vec3 vLight = normalize(l.position-_point);
+        const double dotNL = dot(_normal, vLight);
+        vec3 r = 2 * _normal * dotNL - vLight;
+        vec3 v = normalize(camera.eye - _point);
+        vec3 diffuse_part = _material.diffuse * dotNL;
+        vec3 specular_part = _material.specular * pow(dot(r, v), _material.shininess);
+        Object_ptr object;
+        vec3 p, n;
+        double t;
+        const Ray *shadowRay = new Ray(_point + 0.0000000001*vLight, vLight);
+        
+        if(dotNL > 0) {
+            if(!intersect(*shadowRay, object, p, n, t) || t > norm(camera.eye - _point) )
+                intens += l.color * (diffuse_part + specular_part);
+        }
+    }
     // visualize the normal as a RGB color for now.
-    vec3 color = (_normal + vec3(1)) / 2.0;
+    vec3 color = intens;
 
     return color;
 }

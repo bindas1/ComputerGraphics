@@ -1,0 +1,5 @@
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/ZERO_CHECK.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/lib/lodePNG/CMakeFiles/lodePNG.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src/CMakeFiles/debug_aabb.dir
+/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/src/CMakeFiles/raytrace.dir

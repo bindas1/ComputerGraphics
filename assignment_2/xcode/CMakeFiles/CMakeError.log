@@ -1,0 +1,204 @@
+Detecting C OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_f259d -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_f259d OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/cmTC_f259d.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp=libomp -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported argument 'libomp' to option 'fopenmp='
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_f259d.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+
+Detecting C OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_92e3c -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_92e3c OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/cmTC_92e3c.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp=libiomp5 -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported argument 'libiomp5' to option 'fopenmp='
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_92e3c.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+
+Detecting C OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_cc68e -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_cc68e OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/cmTC_cc68e.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported option '-fopenmp'
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_cc68e.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_19e9a -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_19e9a OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/cmTC_19e9a.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp=libomp -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported argument 'libomp' to option 'fopenmp='
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_19e9a.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_c968b -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_c968b OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/cmTC_c968b.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp=libiomp5 -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported argument 'libiomp5' to option 'fopenmp='
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_c968b.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_5010e -configuration Debug -hideShellScriptEnvironment 
+User defaults from command line:
+    HideShellScriptEnvironment = YES
+
+Prepare build
+note: Using legacy build system
+=== BUILD TARGET cmTC_5010e OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64
+write-file /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/cmTC_5010e.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -target x86_64-apple-macos10.15 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug/include -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/DerivedSources-normal/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/DerivedSources/x86_64 -I/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/Debug -fopenmp -v -MMD -MT dependencies -MF /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/OpenMPTryFlag.d --serialize-diagnostics /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/OpenMPTryFlag.dia -c /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/OpenMPTryFlag.o
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-macos10.15
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+clang: error: unsupported option '-fopenmp'
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC CMAKE_TRY_COMPILE.build/Debug/cmTC_5010e.build/Objects-normal/x86_64/OpenMPTryFlag.o /Users/bindas/Documents2/EPFL/ComputerGraphics/ComputerGraphics/assignment_2/xcode/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+(1 failure)
+
+

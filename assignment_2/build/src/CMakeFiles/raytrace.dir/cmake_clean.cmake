@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/raytrace.dir/raytrace.cpp.o"
   "CMakeFiles/raytrace.dir/Cylinder.cpp.o"
+  "CMakeFiles/raytrace.dir/Image.cpp.o"
   "CMakeFiles/raytrace.dir/Mesh.cpp.o"
   "CMakeFiles/raytrace.dir/Plane.cpp.o"
   "CMakeFiles/raytrace.dir/Scene.cpp.o"
   "CMakeFiles/raytrace.dir/Sphere.cpp.o"
   "CMakeFiles/raytrace.dir/vec3.cpp.o"
-  "CMakeFiles/raytrace.dir/Image.cpp.o"
   "../raytrace.pdb"
   "../raytrace"
 )
