@@ -1,0 +1,9 @@
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/CMakeFiles/rebuild_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/CMakeFiles/edit_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/lib/lodePNG/CMakeFiles/rebuild_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/lib/lodePNG/CMakeFiles/lodePNG.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/lib/lodePNG/CMakeFiles/edit_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/src/CMakeFiles/rebuild_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/src/CMakeFiles/raytrace.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/src/CMakeFiles/edit_cache.dir
+/home/gianni/Desktop/GraphicsRepo/ComputerGraphics/assignment_2/build/src/CMakeFiles/debug_aabb.dir
