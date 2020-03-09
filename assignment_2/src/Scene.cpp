@@ -95,7 +95,7 @@ vec3 Scene::trace(const Ray& _ray, int _depth)
     vec3 color = lighting(point, normal, -_ray.direction, object->material);
 
 
-    /** \todo
+    /**
      * Compute reflections by recursive ray tracing:
      * - check whether `object` is reflective by checking its `material.mirror`
      * - check recursion depth
@@ -103,6 +103,15 @@ vec3 Scene::trace(const Ray& _ray, int _depth)
      * the color computed by local Phong lighting (use `object->material.mirror` as weight)
      * - check whether your recursive algorithm reflects the ray `max_depth` times
      */
+    if(object->material.mirror > 0) {
+        auto alpha = object->material.mirror;
+        //auto reflected_color = trace(reflect(_ray.origin + 0.000000001*normalize(_ray.direction), normal), _depth+1);
+        vec3 origin = normalize(reflect(_ray.direction, normal))*0.000000001 + point;
+        const Ray reflectRay = Ray(origin, normalize(reflect(_ray.direction, normal)));
+        auto reflected_color = trace( reflectRay, _depth+1);
+        color = (1 - alpha) * color + alpha * reflected_color;
+        
+    }
 
     return color;
 }
@@ -135,7 +144,7 @@ bool Scene::intersect(const Ray& _ray, Object_ptr& _object, vec3& _point, vec3& 
 vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view, const Material& _material)
 {
 
-     /** \todo
+     /** 
      * Compute the Phong lighting:
      * - start with global ambient contribution
      * - for each light source (stored in vector `lights`) add diffuse and specular contribution
@@ -157,10 +166,10 @@ vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view,
         Object_ptr object;
         vec3 p, n;
         double t;
-        const Ray *shadowRay = new Ray(_point + 0.0000000001*vLight, vLight);
+        const Ray shadowRay = Ray(_point + 0.0000000001*vLight, vLight);
         
         if(dotNL > 0) {
-            if(!intersect(*shadowRay, object, p, n, t) || t > norm(camera.eye - _point) )
+            if(!intersect(shadowRay, object, p, n, t) || t > norm(camera.eye - _point) )
                 intens += l.color * (diffuse_part + specular_part);
         }
     }
