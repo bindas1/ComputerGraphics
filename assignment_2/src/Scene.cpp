@@ -166,11 +166,13 @@ vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view,
         Object_ptr object;
         vec3 p, n;
         double t;
-        const Ray shadowRay = Ray(_point + 0.0000000001*vLight, vLight);
+        const Ray shadowRay = Ray(_point + 0.01*vLight, vLight);
         
         if(dotNL > 0) {
             if(!intersect(shadowRay, object, p, n, t) || t > norm(camera.eye - _point) )
-                intens += l.color * (diffuse_part + specular_part);
+                intens += l.color * diffuse_part;
+                if (dot(r,v) > 0)
+                        intens += l.color * specular_part;
         }
     }
     // visualize the normal as a RGB color for now.
