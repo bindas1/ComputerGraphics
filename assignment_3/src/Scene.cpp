@@ -20,17 +20,12 @@
 #include <map>
 #include <functional>
 #include <stdexcept>
+#include <cmath>
 
 #if HAS_TBB
 #include <tbb/tbb.h>
 #include <tbb/parallel_for.h>
 #endif
-
-// To prevent spurious intersections caused by numerical issues, we need to
-// offset the shadow and reflected ray emission points from the surface
-// intersection.
-constexpr double shadow_ray_offset = 1e-5;
-constexpr double reflection_ray_offset = 1e-5;
 
 //-----------------------------------------------------------------------------
 
@@ -100,7 +95,23 @@ vec3 Scene::trace(const Ray& _ray, int _depth)
     vec3 color = lighting(point, normal, -_ray.direction, object->material);
 
 
-    // \todo Paste your assignment 2 solution here.
+    /**
+     * Compute reflections by recursive ray tracing:
+     * - check whether `object` is reflective by checking its `material.mirror`
+     * - check recursion depth
+     * - generate reflected ray, compute its color contribution, and mix it with
+     * the color computed by local Phong lighting (use `object->material.mirror` as weight)
+     * - check whether your recursive algorithm reflects the ray `max_depth` times
+     */
+    if(object->material.mirror > 0) {
+        auto alpha = object->material.mirror;
+        //auto reflected_color = trace(reflect(_ray.origin + 0.000000001*normalize(_ray.direction), normal), _depth+1);
+        vec3 origin = normalize(reflect(_ray.direction, normal))*0.000000001 + point;
+        const Ray reflectRay = Ray(origin, normalize(reflect(_ray.direction, normal)));
+        auto reflected_color = trace( reflectRay, _depth+1);
+        color = (1 - alpha) * color + alpha * reflected_color;
+        
+    }
 
     return color;
 }
@@ -133,8 +144,39 @@ bool Scene::intersect(const Ray& _ray, Object_ptr& _object, vec3& _point, vec3& 
 vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view, const Material& _material)
 {
 
-    // \todo Paste your assignment 2 solution here.
-    vec3 color = (_normal + vec3(1)) / 2.0;
+     /** 
+     * Compute the Phong lighting:
+     * - start with global ambient contribution
+     * - for each light source (stored in vector `lights`) add diffuse and specular contribution
+     * - only add diffuse and specular light if object is not in shadow
+     *
+     * You can look at the classes `Light` and `Material` to check their attributes. Feel free to use
+     * the existing vector functions in vec3.h e.g. mirror, reflect, norm, dot, normalize
+     */
+    
+    vec3 intens = _material.ambient * ambience;
+    
+    for(auto l:lights){
+        vec3 vLight = normalize(l.position-_point);
+        const double dotNL = dot(_normal, vLight);
+        vec3 r = 2 * _normal * dotNL - vLight;
+        vec3 v = normalize(camera.eye - _point);
+        vec3 diffuse_part = _material.diffuse * dotNL;
+        vec3 specular_part = _material.specular * pow(dot(r, v), _material.shininess);
+        Object_ptr object;
+        vec3 p, n;
+        double t;
+        const Ray shadowRay = Ray(_point + 0.01*vLight, vLight);
+        
+        if(dotNL > 0) {
+            if(!intersect(shadowRay, object, p, n, t) || t > norm(camera.eye - _point) )
+                intens += l.color * diffuse_part;
+                if (dot(r,v) > 0)
+                        intens += l.color * specular_part;
+        }
+    }
+    // visualize the normal as a RGB color for now.
+    vec3 color = intens;
 
     return color;
 }
