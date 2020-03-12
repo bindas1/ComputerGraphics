@@ -306,12 +306,12 @@ intersect_triangle(const Triangle&  _triangle,
                              {p0_2[2], p1_2[2], d[2]}};
     
     double matrix_alpha[3][3] = {{o_p2[0], p1_2[0], d[0]},
-                             {o_p2[1], p1_2[1], d[1]},
-                             {o_p2[2], p1_2[2], d[2]}};
+                                 {o_p2[1], p1_2[1], d[1]},
+                                 {o_p2[2], p1_2[2], d[2]}};
     
     double matrix_beta[3][3] = {{p0_2[0], o_p2[0], d[0]},
-                             {p0_2[1], o_p2[1], d[1]},
-                             {p0_2[2], o_p2[2], d[2]}};
+                                {p0_2[1], o_p2[1], d[1]},
+                                {p0_2[2], o_p2[2], d[2]}};
     
     double matrix_t[3][3] = {{p0_2[0], p1_2[0], o_p2[0]},
                              {p0_2[1], p1_2[1], o_p2[1]},
@@ -325,13 +325,30 @@ intersect_triangle(const Triangle&  _triangle,
     double alpha;
     double beta;
     double t;
+    double gamma;
 
     if(determinant_d != 0) {
         alpha = determinant_a / determinant_d;
         beta = determinant_b / determinant_d;
+        gamma = 1 - alpha - beta;
         t = determinant_t / determinant_d;
-        
     }
+    else
+        return false;
+    
+    if (alpha >= 0 && beta >= 0 && gamma >= 0 && t >= 0) {
+        _intersection_t = t;
+        _intersection_point = _ray.origin + _intersection_t * d;
+        if(draw_mode_ == FLAT)
+            _intersection_normal = _triangle.normal;
+        else
+            _intersection_normal = alpha * vertices_[_triangle.i0].normal +                    beta * vertices_[_triangle.i1].normal +
+                                   gamma * vertices_[_triangle.i2].normal;
+        return true;
+    }
+    
+    
+        
     
     return false;
 }
