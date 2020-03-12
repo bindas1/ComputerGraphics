@@ -19,6 +19,29 @@
 
 //== IMPLEMENTATION ===========================================================
 
+double determinant( double matrix[3][3], int n) {
+   double det = 0;
+   double submatrix[3][3];
+   if (n == 2)
+      return ((matrix[0][0] * matrix[1][1]) - (matrix[1][0] * matrix[0][1]));
+   else {
+      for (int x = 0; x < n; x++) {
+            int subi = 0;
+            for (int i = 1; i < n; i++) {
+               int subj = 0;
+               for (int j = 0; j < n; j++) {
+                  if (j == x)
+                  continue;
+                  submatrix[subi][subj] = matrix[i][j];
+                  subj++;
+               }
+               subi++;
+            }
+            det = det + (pow(-1, x) * matrix[0][x] * determinant( submatrix, n - 1 ));
+      }
+   }
+   return det;
+}
 
 Mesh::Mesh(std::istream &is, const std::string &scenePath)
 {
@@ -268,7 +291,48 @@ intersect_triangle(const Triangle&  _triangle,
     * system for a, b and t.
     * Refer to [Cramer's Rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) to easily solve it.
      */
+    
+    // a is alpha
+    // b is beta
+    // c (gama) = 1 - a - b
+    
+    vec3 p0_2 = p0 - p2;
+    vec3 p1_2 = p1 - p2;
+    vec3 d = _ray.direction;
+    vec3 o_p2 = _ray.origin - p2;
+    
+    double matrix_d[3][3] = {{p0_2[0], p1_2[0], d[0]},
+                             {p0_2[1], p1_2[1], d[1]},
+                             {p0_2[2], p1_2[2], d[2]}};
+    
+    double matrix_alpha[3][3] = {{o_p2[0], p1_2[0], d[0]},
+                             {o_p2[1], p1_2[1], d[1]},
+                             {o_p2[2], p1_2[2], d[2]}};
+    
+    double matrix_beta[3][3] = {{p0_2[0], o_p2[0], d[0]},
+                             {p0_2[1], o_p2[1], d[1]},
+                             {p0_2[2], o_p2[2], d[2]}};
+    
+    double matrix_t[3][3] = {{p0_2[0], p1_2[0], o_p2[0]},
+                             {p0_2[1], p1_2[1], o_p2[1]},
+                             {p0_2[2], p1_2[2], o_p2[2]}};
+    
+    double determinant_d = determinant(matrix_d, 3);
+    double determinant_a = determinant(matrix_alpha, 3);
+    double determinant_b = determinant(matrix_beta, 3);
+    double determinant_t = determinant(matrix_t, 3);
+    
+    double alpha;
+    double beta;
+    double t;
 
+    if(determinant_d != 0) {
+        alpha = determinant_a / determinant_d;
+        beta = determinant_b / determinant_d;
+        t = determinant_t / determinant_d;
+        
+    }
+    
     return false;
 }
 
