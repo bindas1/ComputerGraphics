@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include <limits>
 #include <cmath>   // needed for double version of std::abs
-#include<algorithm> 
+#include<algorithm>
 //== IMPLEMENTATION ===========================================================
 
 double determinant( double matrix[3][3], int n) {
@@ -211,24 +211,24 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     vec3 real_bb_min = bb_min_;
     vec3 real_bb_max = bb_max_;
 
-    double t_0_min = (real_bb_min[0] - _ray.origin[0])/_ray.direction[0];
-    double t_0_max = (real_bb_max[0] - _ray.origin[0])/_ray.direction[0];
+    double t_0_first = (real_bb_min[0] - _ray.origin[0])/_ray.direction[0];
+    double t_0_second = (real_bb_max[0] - _ray.origin[0])/_ray.direction[0];
 
-    double t_1_min = (real_bb_min[1] - _ray.origin[1])/_ray.direction[1];
-    double t_1_max = (real_bb_max[1] - _ray.origin[1])/_ray.direction[1];
+    double t_1_first = (real_bb_min[1] - _ray.origin[1])/_ray.direction[1];
+    double t_1_second = (real_bb_max[1] - _ray.origin[1])/_ray.direction[1];
 
-    if (std::min(t_0_min, t_0_max) > std::max(t_1_min, t_1_max) || 
-        std::min(t_1_min, t_1_max) > std::max(t_0_min, t_0_max))
+    if (std::min(t_0_first, t_0_second) > std::max(t_1_first, t_1_second) ||
+        std::min(t_1_first, t_1_second) > std::max(t_0_first, t_0_second))
     { return false; }
 
-    double new_t_min = std::max(std::min(t_0_min, t_0_max), std::min(t_1_max, t_1_min));
-    double new_t_max = std::min(std::max(t_0_min, t_0_max), std::max(t_1_max, t_1_min));
+    double new_t_min = std::max(std::min(t_0_first, t_0_second), std::min(t_1_second, t_1_first));
+    double new_t_max = std::min(std::max(t_0_first, t_0_second), std::max(t_1_second, t_1_min));
 
-    double t_2_min = (real_bb_min[2] - _ray.origin[2])/_ray.direction[2];
-    double t_2_max = (real_bb_max[2] - _ray.origin[2])/_ray.direction[2];
-    
-    if (std::min(new_t_min, new_t_max) > std::max(t_2_min, t_2_max) || 
-        std::min(t_2_min, t_2_max) > std::max(new_t_min, new_t_max))
+    double t_2_first = (real_bb_min[2] - _ray.origin[2])/_ray.direction[2];
+    double t_2_second = (real_bb_max[2] - _ray.origin[2])/_ray.direction[2];
+
+    if (std::min(new_t_min, new_t_max) > std::max(t_2_first, t_2_second) ||
+        std::min(t_2_first, t_2_second) > std::max(new_t_min, new_t_max))
     { return false; }
 
     return true;
