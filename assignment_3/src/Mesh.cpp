@@ -206,10 +206,8 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     * with all triangles of every mesh in the scene. The bounding boxes are computed
     * in `Mesh::compute_bounding_box()`.
     */
-//    const vec3 real_bb_min = min(bb_min_, bb_max_);
-//    const vec3 real_bb_max = max(bb_min_, bb_max_);
-    vec3 real_bb_min = bb_min_;
-    vec3 real_bb_max = bb_max_;
+   const vec3 real_bb_min = min(bb_min_, bb_max_);
+   const vec3 real_bb_max = max(bb_min_, bb_max_);
 
     double t_0_first = (real_bb_min[0] - _ray.origin[0])/_ray.direction[0];
     double t_0_second = (real_bb_max[0] - _ray.origin[0])/_ray.direction[0];
