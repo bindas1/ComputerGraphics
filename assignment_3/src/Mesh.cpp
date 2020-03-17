@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include <limits>
 #include <cmath>   // needed for double version of std::abs
-
+#include<algorithm> 
 //== IMPLEMENTATION ===========================================================
 
 double determinant( double matrix[3][3], int n) {
@@ -194,20 +194,6 @@ void Mesh::compute_bounding_box()
 //-----------------------------------------------------------------------------
 
 
-bool intersect_box_face(const vec3& min_p, const vec3& max_p, const Ray& _ray, int axis) {
-	double t = (min_p[axis] - _ray.origin[axis])/_ray.direction[axis];
-	if (t < 0)
-		return false;
-	vec3 p = _ray(t);
-	double err = 1e-4;
-	for (int i = 0; i < 3; i++)
-		if (i != axis)
-			if (p[i] < min_p[i] - err || p[i] > max_p[i] + err)
-				return false;
-	return true;
-
-}
-
 bool Mesh::intersect_bounding_box(const Ray& _ray) const
 {
 
@@ -220,17 +206,33 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     * with all triangles of every mesh in the scene. The bounding boxes are computed
     * in `Mesh::compute_bounding_box()`.
     */
-    vec3 move_max;
-    vec3 move_min;
-	for (int axis = 0; axis < 3; axis ++) {
-		move_max = bb_max_;
-		move_max[axis] = bb_min_[axis];
-		move_min = bb_min_;
-		move_min[axis] = bb_max_[axis];
-		if (intersect_box_face(move_min, bb_max_, _ray, axis) || intersect_box_face(bb_min_, move_max, _ray, axis))
-			return true;
-	}
-	return false;
+//    const vec3 real_bb_min = min(bb_min_, bb_max_);
+//    const vec3 real_bb_max = max(bb_min_, bb_max_);
+    vec3 real_bb_min = bb_min_;
+    vec3 real_bb_max = bb_max_;
+
+    double t_0_min = (real_bb_min[0] - _ray.origin[0])/_ray.direction[0];
+    double t_0_max = (real_bb_max[0] - _ray.origin[0])/_ray.direction[0];
+
+    double t_1_min = (real_bb_min[1] - _ray.origin[1])/_ray.direction[1];
+    double t_1_max = (real_bb_max[1] - _ray.origin[1])/_ray.direction[1];
+
+    if (std::min(t_0_min, t_0_max) > std::max(t_1_min, t_1_max) || 
+        std::min(t_1_min, t_1_max) > std::max(t_0_min, t_0_max))
+    { return false; }
+
+    double new_t_min = std::max(std::min(t_0_min, t_0_max), std::min(t_1_max, t_1_min));
+    double new_t_max = std::min(std::max(t_0_min, t_0_max), std::max(t_1_max, t_1_min));
+
+    double t_2_min = (real_bb_min[2] - _ray.origin[2])/_ray.direction[2];
+    double t_2_max = (real_bb_max[2] - _ray.origin[2])/_ray.direction[2];
+    
+    if (std::min(new_t_min, new_t_max) > std::max(t_2_min, t_2_max) || 
+        std::min(t_2_min, t_2_max) > std::max(new_t_min, new_t_max))
+    { return false; }
+
+    return true;
+
 }
 
 
