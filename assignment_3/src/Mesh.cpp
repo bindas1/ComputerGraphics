@@ -20,27 +20,16 @@
 //== IMPLEMENTATION ===========================================================
 
 double determinant( double matrix[3][3], int n) {
-   double det = 0;
-   double submatrix[3][3];
-   if (n == 2)
-      return ((matrix[0][0] * matrix[1][1]) - (matrix[1][0] * matrix[0][1]));
-   else {
-      for (int x = 0; x < n; x++) {
-            int subi = 0;
-            for (int i = 1; i < n; i++) {
-               int subj = 0;
-               for (int j = 0; j < n; j++) {
-                  if (j == x)
-                  continue;
-                  submatrix[subi][subj] = matrix[i][j];
-                  subj++;
-               }
-               subi++;
-            }
-            det = det + (pow(-1, x) * matrix[0][x] * determinant( submatrix, n - 1 ));
-      }
-   }
-   return det;
+    double a = matrix[0][0];
+    double b = matrix[0][1];
+    double c = matrix[0][2];
+    double d = matrix[1][0];
+    double e = matrix[1][1];
+    double f = matrix[1][2];
+    double g = matrix[2][0];
+    double h = matrix[2][1];
+    double i = matrix[2][2];
+    return a*e*i + b*f*g+c*d*h-a*f*h-b*d*i-c*e*g;
 }
 
 Mesh::Mesh(std::istream &is, const std::string &scenePath)
@@ -170,7 +159,6 @@ void Mesh::compute_normals()
         vertices_[t.i2].normal += w2 * t.normal;
     }
 
-    // initialize vertex normals to zero
     for (Vertex& v: vertices_)
     {
         v.normal = v.normal/norm(v.normal);
@@ -206,6 +194,20 @@ void Mesh::compute_bounding_box()
 //-----------------------------------------------------------------------------
 
 
+bool intersect_box_face(const vec3& min_p, const vec3& max_p, const Ray& _ray, int axis) {
+	double t = (min_p[axis] - _ray.origin[axis])/_ray.direction[axis];
+	if (t < 0)
+		return false;
+	vec3 p = _ray(t);
+	double err = 1e-4;
+	for (int i = 0; i < 3; i++)
+		if (i != axis)
+			if (p[i] < min_p[i] - err || p[i] > max_p[i] + err)
+				return false;
+	return true;
+
+}
+
 bool Mesh::intersect_bounding_box(const Ray& _ray) const
 {
 
@@ -218,8 +220,17 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     * with all triangles of every mesh in the scene. The bounding boxes are computed
     * in `Mesh::compute_bounding_box()`.
     */
-
-    return true;
+    vec3 move_max;
+    vec3 move_min;
+	for (int axis = 0; axis < 3; axis ++) {
+		move_max = bb_max_;
+		move_max[axis] = bb_min_[axis];
+		move_min = bb_min_;
+		move_min[axis] = bb_max_[axis];
+		if (intersect_box_face(move_min, bb_max_, _ray, axis) || intersect_box_face(bb_min_, move_max, _ray, axis))
+			return true;
+	}
+	return false;
 }
 
 
@@ -291,37 +302,37 @@ intersect_triangle(const Triangle&  _triangle,
     * system for a, b and t.
     * Refer to [Cramer's Rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) to easily solve it.
      */
-    
+
     // a is alpha
     // b is beta
     // c (gama) = 1 - a - b
-    
+
     vec3 p0_2 = p0 - p2;
     vec3 p1_2 = p1 - p2;
-    vec3 d = _ray.direction;
+    vec3 d = -1 * _ray.direction;
     vec3 o_p2 = _ray.origin - p2;
-    
+
     double matrix_d[3][3] = {{p0_2[0], p1_2[0], d[0]},
                              {p0_2[1], p1_2[1], d[1]},
                              {p0_2[2], p1_2[2], d[2]}};
-    
+
     double matrix_alpha[3][3] = {{o_p2[0], p1_2[0], d[0]},
                                  {o_p2[1], p1_2[1], d[1]},
                                  {o_p2[2], p1_2[2], d[2]}};
-    
+
     double matrix_beta[3][3] = {{p0_2[0], o_p2[0], d[0]},
                                 {p0_2[1], o_p2[1], d[1]},
                                 {p0_2[2], o_p2[2], d[2]}};
-    
+
     double matrix_t[3][3] = {{p0_2[0], p1_2[0], o_p2[0]},
                              {p0_2[1], p1_2[1], o_p2[1]},
                              {p0_2[2], p1_2[2], o_p2[2]}};
-    
+
     double determinant_d = determinant(matrix_d, 3);
     double determinant_a = determinant(matrix_alpha, 3);
     double determinant_b = determinant(matrix_beta, 3);
     double determinant_t = determinant(matrix_t, 3);
-    
+
     double alpha;
     double beta;
     double t;
@@ -335,21 +346,20 @@ intersect_triangle(const Triangle&  _triangle,
     }
     else
         return false;
-    
+
     if (alpha >= 0 && beta >= 0 && gamma >= 0 && t >= 0) {
         _intersection_t = t;
-        _intersection_point = _ray.origin + _intersection_t * d;
+        _intersection_point = _ray(_intersection_t);
         if(draw_mode_ == FLAT)
-            _intersection_normal = _triangle.normal;
+            _intersection_normal = normalize(_triangle.normal);
         else
-            _intersection_normal = alpha * vertices_[_triangle.i0].normal +                    beta * vertices_[_triangle.i1].normal +
-                                   gamma * vertices_[_triangle.i2].normal;
+            _intersection_normal = normalize(
+                alpha * vertices_[_triangle.i0].normal +
+                beta * vertices_[_triangle.i1].normal +
+                gamma * vertices_[_triangle.i2].normal);
         return true;
     }
-    
-    
-        
-    
+
     return false;
 }
 
