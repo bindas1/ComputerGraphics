@@ -220,7 +220,7 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     { return false; }
 
     double new_t_min = std::max(std::min(t_0_first, t_0_second), std::min(t_1_second, t_1_first));
-    double new_t_max = std::min(std::max(t_0_first, t_0_second), std::max(t_1_second, t_1_min));
+    double new_t_max = std::min(std::max(t_0_first, t_0_second), std::max(t_1_second, t_1_first));
 
     double t_2_first = (real_bb_min[2] - _ray.origin[2])/_ray.direction[2];
     double t_2_second = (real_bb_max[2] - _ray.origin[2])/_ray.direction[2];
