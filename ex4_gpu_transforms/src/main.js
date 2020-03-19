@@ -98,7 +98,7 @@ async function main() {
 		void main() {
 			v2f_tex_coord = tex_coord;
 			// TODO 2.1.1 Edit the vertex shader to apply mat_mvp to the vertex position.
-			gl_Position = vec4(position, 1);
+			gl_Position = mat_mvp * vec4(position, 1);
 		}`,
 		
 		// Fragment shader
@@ -290,7 +290,7 @@ async function main() {
 			// model matrix: actor.mat_model_to_world
 			// view matrix: mat_world_to_cam
 			// projection matrix: mat_projection
-			mat4.identity(mat_mvp); // replace this
+			mat4_matmul_many(mat_mvp, mat_projection, mat_world_to_cam, actor.mat_model_to_world)
 
 			draw_sphere({
 				mat_mvp: mat_mvp,
