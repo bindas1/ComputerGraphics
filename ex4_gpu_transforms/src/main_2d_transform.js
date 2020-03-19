@@ -81,7 +81,7 @@ async function main() {
 		void main() {
 			// TODO 1.1.1 Edit the vertex shader to apply mouse_offset translation to the vertex position.
 			// We have to return a vec4, because homogenous coordinates are being used.
-			gl_Position = vec4(position, 0, 1);
+			gl_Position = vec4(position + mouse_offset, 0, 1);
 		}`,
 			
 		/* 
@@ -194,8 +194,8 @@ async function main() {
 		// TODO 1.1.2 Draw the blue triangle translated by mouse_offset
 		
 		draw_triangle_with_offset({
-			mouse_offset: [0, 0],
-			color: [0.5, 0.5, 0.5],
+			mouse_offset: mouse_offset,
+			color: color_blue,
 		});
 
 		/*
