@@ -256,25 +256,26 @@ async function main() {
 
 		const M_orbit = mat4.create();
 
-		const radius = actor.orbit_radius
 		const angle_spin = sim_time * actor.rotation_speed
-		const scale = actor.size
-
-		const mat_trans = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
 
 		const mat_rotZ = mat4.fromZRotation(mat4.create(), angle_spin)
 
-		const mat_scale = mat4.fromScaling(mat4.create(), [scale, scale, scale])
+		const mat_scale = mat4.fromScaling(mat4.create(), [actor.size, actor.size, actor.size])
 
 		if(actor.orbits !== null) {
-			// Parent's translation
+			// Parent's translation	
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
+            const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
 
 			const angle_orbit = sim_time * actor.orbit_speed + actor.orbit_phase
 			
 			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
 
-			mat4_matmul_many(M_orbit, actor.orbits.mat_model_to_world, mat_rotOrbit, mat_trans);
+			const radius = actor.orbit_radius
+
+			const mat_trans_around_parent = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
+
+			mat4_matmul_many(M_orbit, mat_trans_parent, mat_rotOrbit, mat_trans_around_parent);
 
 			// Orbit around the parent
 		}
