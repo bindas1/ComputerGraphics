@@ -26,7 +26,7 @@ async function main() {
 	regl_global_handle = regl;
 	// The <canvas> (HTML element for drawing graphics) was created by REGL, lets take a handle to it.
 	const canvas_elem = document.getElementsByTagName('canvas')[0];
-	
+
 	const debug_text = document.getElementById('debug-text');
 
 
@@ -52,7 +52,7 @@ async function main() {
 		'moon': load_texture(regl, './textures/moon.jpg'),
 		'mars': load_texture(regl, './textures/mars.jpg'),
 	}
-	
+
 	// Wait for all downloads to complete
 	for (const key in textures) {
 		if (textures.hasOwnProperty(key)) {
@@ -60,7 +60,7 @@ async function main() {
 		}
 	}
 
-	
+
 	/*---------------------------------------------------------------
 		GPU pipeline
 	---------------------------------------------------------------*/
@@ -79,7 +79,7 @@ async function main() {
 		uniforms: {
 			mat_mvp: regl.prop('mat_mvp'),
 			texture_base_color: regl.prop('tex_base_color'),
-		},	
+		},
 
 		// Vertex shader program
 		// Given vertex attributes, it calculates the position of the vertex on screen
@@ -88,32 +88,32 @@ async function main() {
 		// Vertex attributes, specified in the "attributes" entry of the pipeline
 		attribute vec3 position;
 		attribute vec2 tex_coord;
-		
+
 		// Per-vertex outputs passed on to the fragment shader
 		varying vec2 v2f_tex_coord;
-		
+
 		// Global variables specified in "uniforms" entry of the pipeline
 		uniform mat4 mat_mvp;
-		
+
 		void main() {
 			v2f_tex_coord = tex_coord;
 			// TODO 2.1.1 Edit the vertex shader to apply mat_mvp to the vertex position.
 			gl_Position = mat_mvp * vec4(position, 1);
 		}`,
-		
+
 		// Fragment shader
 		// Calculates the color of each pixel covered by the mesh.
 		// The "varying" values are interpolated between the values given by the vertex shader on the vertices of the current triangle.
 		frag: `
 		precision mediump float;
-		
+
 		varying vec2 v2f_tex_coord;
-		
+
 		uniform sampler2D texture_base_color;
 
 		void main() {
 			vec3 color_from_texture = texture2D(texture_base_color, v2f_tex_coord).rgb;
-			
+
 			gl_FragColor = vec4(color_from_texture, 1.); // output: RGBA in 0..1 range
 		}`,
 	});
@@ -126,7 +126,7 @@ async function main() {
 	---------------------------------------------------------------*/
 	const mat_world_to_cam = mat4.create();
 	const cam_distance_base = 20;
-	
+
 	let cam_angle_z = Math.PI * 0.2; // in radians!
 	let cam_angle_y = -Math.PI / 6; // in radians!
 	let cam_distance_factor = 1.;
@@ -134,7 +134,7 @@ async function main() {
 	function update_cam_transform() {
 		/* TODO 2.2
 		Calculate the world-to-camera transformation matrix.
-		The camera orbits the scene 
+		The camera orbits the scene
 		* cam_distance_base * cam_distance_factor = distance of the camera from the (0, 0, 0) point
 		* cam_angle_z - camera ray's angle around the Z axis
 		* cam_angle_y - camera ray's angle around the Y axis
@@ -143,11 +143,12 @@ async function main() {
 		// distance to [0, 0, 0]
 		let r = cam_distance_base * cam_distance_factor
 
-		let mat_rotY = mat4.fromZRotation(mat4.create(), cam_angle_y)
+		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
 		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
+		let mat_trans = mat4.fromTranslation(mat4.create(), [r, 0, 0] )
 
 		// Example camera matrix, looking along forward-X, edit this
-		const look_at = mat4.lookAt(mat4.create(), 
+		const look_at = mat4.lookAt(mat4.create(),
 			[-5, 0, 0], // camera position in world coord
 			[0, 0, 0], // view target point
 			[0, 0, 1], // up vector
@@ -155,7 +156,7 @@ async function main() {
 
 		// Store the combined transform in mat_world_to_cam
 		// mat_world_to_cam = A * B * ...
-		mat4_matmul_many(mat_world_to_cam, mat_rotY, mat_rotZ, look_at); // edit this
+		mat4_matmul_many(mat_world_to_cam, look_at, mat_trans, mat_rotY, mat_rotZ); // edit this
 	}
 
 	update_cam_transform();
@@ -223,7 +224,7 @@ async function main() {
 	// actors in the order they should be drawn
 	const actors_list = [actors_by_name.sun, actors_by_name.earth, actors_by_name.moon, actors_by_name.mars];
 
-	
+
 	for (const actor of actors_list) {
 		// initialize transform matrix
 		actor.mat_model_to_world = mat4.create();
@@ -239,7 +240,7 @@ async function main() {
 		/*
 		TODO 2.3
 		Construct the model matrix for the current planet and store it in actor.mat_model_to_world.
-		
+
 		Orbit (if the parent actor.orbits is not null)
 			radius = actor.orbit_radius
 			angle = sim_time * actor.orbit_speed + actor.orbit_phase
@@ -247,7 +248,7 @@ async function main() {
 
 		Spin around the planet's Z axis
 			angle = sim_time * actor.rotation_speed (radians)
-		
+
 		Scale the unit sphere to match the desired size
 			scale = actor.size
 			mat4.fromScaling takes a 3D vector!
@@ -260,8 +261,8 @@ async function main() {
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
 
 			// Orbit around the parent
-		} 
-		
+		}
+
 		// Store the combined transform in actor.mat_model_to_world
 		//mat4_matmul_many(actor.mat_model_to_world, ...);
 	}
@@ -283,13 +284,13 @@ async function main() {
 		// Set the whole image to black
 		regl.clear({color: [0, 0, 0, 1]});
 
-		mat4.perspective(mat_projection, 
+		mat4.perspective(mat_projection,
 			deg_to_rad * 60, // fov y
 			frame.framebufferWidth / frame.framebufferHeight, // aspect ratio
 			0.01, // near
 			100, // far
 		)
-		
+
 		for (const actor of actors_list) {
 			calculate_actor_to_world_transform(actor, sim_time);
 
