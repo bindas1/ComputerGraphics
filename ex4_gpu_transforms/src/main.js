@@ -271,9 +271,9 @@ async function main() {
 
 			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
 
-			const mat_scale = mat4.fromScaling(mat4.create(), scale)
+			const mat_scale = mat4.fromScaling(mat4.create(), [scale, scale, scale])
 
-			mat4_matmul_many(M_orbit, mat_rotOrbit, mat_trans, mat_rotZ);
+			mat4_matmul_many(M_orbit, mat_rotOrbit, mat_trans, mat_scale, mat_rotZ);
 
 			// Orbit around the parent
 		}
