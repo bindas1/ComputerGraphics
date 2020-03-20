@@ -254,29 +254,32 @@ async function main() {
 			mat4.fromScaling takes a 3D vector!
 		*/
 
-		//const M_orbit = mat4.create();
+		const M_orbit = mat4.create();
 
 		if(actor.orbits !== null) {
 			// Parent's translation
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
 
+			const angle_orbit = sim_time * actor.orbit_speed + actor.orbit_phase
 			const radius = actor.orbit_radius
-			const angle = sim_time * actor.rotation_speed
+			const angle_spin = sim_time * actor.rotation_speed
 			const scale = actor.size
 
 			const mat_trans = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
 
-			const mat_rotZ = mat4.fromZRotation(mat4.create(), angle)
+			const mat_rotZ = mat4.fromZRotation(mat4.create(), angle_spin)
+
+			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
 
 			const mat_scale = mat4.fromScaling(mat4.create(), scale)
 
-			mat4_matmul_many(actor.mat_model_to_world, mat_trans, mat_rotZ);
+			mat4_matmul_many(M_orbit, mat_rotOrbit, mat_trans, mat_rotZ);
 
 			// Orbit around the parent
 		}
 
 		// Store the combined transform in actor.mat_model_to_world
-		
+		mat4_matmul_many(actor.mat_model_to_world, M_orbit);
 	}
 
 
