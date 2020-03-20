@@ -145,11 +145,11 @@ async function main() {
 
 		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
 		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
-		let mat_trans = mat4.fromTranslation(mat4.create(), [r, 0, 0] )
+		let mat_trans = mat4.fromTranslation(mat4.create(), [r / 2, 0, 0] )
 
 		// Example camera matrix, looking along forward-X, edit this
 		const look_at = mat4.lookAt(mat4.create(),
-			[-5, 0, 0], // camera position in world coord
+			[-1, 0, 0], // camera position in world coord
 			[0, 0, 0], // view target point
 			[0, 0, 1], // up vector
 		);
@@ -260,11 +260,23 @@ async function main() {
 			// Parent's translation
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
 
+			const radius = actor.orbit_radius
+			const angle = sim_time * actor.rotation_speed
+			const scale = actor.size
+
+			const mat_trans = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
+
+			const mat_rotZ = mat4.fromZRotation(mat4.create(), angle)
+
+			const mat_scale = mat4.fromScaling(mat4.create(), scale)
+
+			mat4_matmul_many(actor.mat_model_to_world, mat_trans, mat_rotZ);
+
 			// Orbit around the parent
 		}
 
 		// Store the combined transform in actor.mat_model_to_world
-		//mat4_matmul_many(actor.mat_model_to_world, ...);
+		
 	}
 
 
