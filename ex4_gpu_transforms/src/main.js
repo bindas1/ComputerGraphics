@@ -266,6 +266,7 @@ async function main() {
 			const scale = actor.size
 
 			const mat_trans = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
+			console.log(actor.orbits.mat_model_to_world.toString())
 
 			const mat_rotZ = mat4.fromZRotation(mat4.create(), angle_spin)
 
@@ -273,7 +274,7 @@ async function main() {
 
 			const mat_scale = mat4.fromScaling(mat4.create(), [scale, scale, scale])
 
-			mat4_matmul_many(M_orbit, mat_rotOrbit, mat_trans, mat_scale, mat_rotZ);
+			mat4_matmul_many(M_orbit, actor.orbits.mat_model_to_world, mat_rotOrbit, mat_trans, mat_scale, mat_rotZ);
 
 			// Orbit around the parent
 		}
