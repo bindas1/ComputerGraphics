@@ -10,7 +10,7 @@ Caches pipelines by name.
 function cached_pipeline(key, construction_func) {
 	if(!(key in PIPELINE_CACHE)) {
 		try {
-			PIPELINE_CACHE[key] = construction_func();			
+			PIPELINE_CACHE[key] = construction_func();
 		} catch (e) {
 			console.error('Error in construction of pipeline', key, e);
 		}
@@ -31,34 +31,7 @@ class Actor {
 	}
 
 	calculate_model_matrix(sim_time) {
-		const M_orbit = mat4.create();
-
-		const angle_spin = sim_time * this.rotation_speed
-
-		const mat_rotZ = mat4.fromZRotation(mat4.create(), angle_spin)
-
-		const mat_scale = mat4.fromScaling(mat4.create(), [this.size, this.size, this.size])
-
-		if(this.orbits !== null) {
-			// Parent's translation	
-			const parent_translation_v = mat4.getTranslation([0, 0, 0], this.orbits.mat_model_to_world);
-            const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
-
-			const angle_orbit = sim_time * this.orbit_speed + this.orbit_phase
-			
-			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
-
-			const radius = this.orbit_radius
-
-			const mat_trans_around_parent = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
-
-			mat4_matmul_many(M_orbit, mat_trans_parent, mat_rotOrbit, mat_trans_around_parent);
-
-			// Orbit around the parent
-		}
-
-		// Store the combined transform in actor.mat_model_to_world
-		mat4_matmul_many(this.mat_model_to_world, M_orbit, mat_rotZ, mat_scale);
+		throw Error('Not implemented: Actor.calculate_model_matrix');
 	}
 
 	draw({mat_projection, mat_view, light_position_cam, sim_time}) {
@@ -77,13 +50,13 @@ class PlanetActor extends Actor {
 			},
 			// Faces, as triplets of vertex indices
 			elements: resources.mesh_uvsphere.faces,
-	
+
 			// Uniforms: global data available to the shader
 			uniforms: {
 				mat_mvp: regl.prop('mat_mvp'),
 				texture_base_color: regl.prop('tex_base_color'),
-			},	
-	
+			},
+
 			vert: resources.shader_unshaded_vert,
 			frag: resources.shader_unshaded_frag,
 		}));
@@ -105,35 +78,34 @@ class PlanetActor extends Actor {
 	}
 
 	calculate_model_matrix({sim_time}) {
-		/*
-		TODO 2.3
-		Construct the model matrix for the current planet and store it in this.mat_model_to_world.
-		
-		Orbit (if the parent this.orbits is not null)
-			radius = this.orbit_radius
-			angle = sim_time * this.orbit_speed + this.orbit_phase
-			around parent's position (this.orbits.mat_model_to_world)
+		const M_orbit = mat4.create();
 
-		Spin around the planet's Z axis
-			angle = sim_time * this.rotation_speed (radians)
-		
-		Scale the unit sphere to match the desired size
-			scale = this.size
-			mat4.fromScaling takes a 3D vector!
-		*/
+		const angle_spin = sim_time * this.rotation_speed
 
-		//const M_orbit = mat4.create();
+		const mat_rotZ = mat4.fromZRotation(mat4.create(), angle_spin)
+
+		const mat_scale = mat4.fromScaling(mat4.create(), [this.size, this.size, this.size])
 
 		if(this.orbits !== null) {
 			// Parent's translation
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], this.orbits.mat_model_to_world);
+            const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
+
+			const angle_orbit = sim_time * this.orbit_speed + this.orbit_phase
+
+			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
+
+			const radius = this.orbit_radius
+
+			const mat_trans_around_parent = mat4.fromTranslation(mat4.create(), [radius, 0, 0] )
+
+			mat4_matmul_many(M_orbit, mat_trans_parent, mat_rotOrbit, mat_trans_around_parent);
 
 			// Orbit around the parent
-		} 
-		
-		// Store the combined transform in this.mat_model_to_world
-		//mat4_matmul_many(this.mat_model_to_world, ...);
+		}
 
+		// Store the combined transform in actor.mat_model_to_world
+		mat4_matmul_many(this.mat_model_to_world, M_orbit, mat_rotZ, mat_scale);
 	}
 
 	draw({mat_projection, mat_view}) {
@@ -160,24 +132,24 @@ class PhongActor extends PlanetActor {
 			},
 			// Faces, as triplets of vertex indices
 			elements: resources.mesh_uvsphere.faces,
-	
+
 			// Uniforms: global data available to the shader
 			uniforms: {
 				mat_mvp: regl.prop('mat_mvp'),
 				mat_model_view: regl.prop('mat_model_view'),
 				mat_normals: regl.prop('mat_normals'),
-	
+
 				light_position: regl.prop('light_position'),
 				texture_base_color: regl.prop('tex_base_color'),
 
 				shininess: regl.prop('shininess'),
 				ambient :regl.prop('ambient'),
 				light_color :regl.prop('light_color'),
-			},	
-	
+			},
+
 			vert: resources.shader_phong_vert,
 			frag: resources.shader_phong_frag,
-		}));	
+		}));
 	}
 
 	constructor(cfg, regl, resources) {
@@ -236,13 +208,13 @@ class EarthActor extends PhongActor {
 			},
 			// Faces, as triplets of vertex indices
 			elements: resources.mesh_uvsphere.faces,
-	
+
 			// Uniforms: global data available to the shader
 			uniforms: {
 				mat_mvp: regl.prop('mat_mvp'),
 				mat_model_view: regl.prop('mat_model_view'),
 				mat_normals: regl.prop('mat_normals'),
-	
+
 				light_position: regl.prop('light_position'),
 
 				texture_surface_day: resources.tex_earth_day,
@@ -255,11 +227,11 @@ class EarthActor extends PhongActor {
 				light_color :regl.prop('light_color'),
 
 				sim_time: regl.prop('sim_time'),
-			},	
-	
+			},
+
 			vert: resources.shader_phong_vert, // using phont.vert for Earth too!
 			frag: resources.shader_earth_frag,
-		}));	
+		}));
 	}
 
 }
@@ -323,4 +295,3 @@ class SunBillboardActor extends Actor {
 		});
 	}
 }
-
