@@ -1,0 +1,300 @@
+<!doctype html>
+<!-- pandoc readme.md --template page_template.html -o page.html 
+ -->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> ICG Exercise 5 – Texturing and Lighting </title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+	max-width: 60rem;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-family: sans-serif;
+	font-size: 1.1rem;
+	line-height: 120%;
+
+	text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6, a
+{
+	/* color: rgb(50, 90, 200); */
+	color: hsl(138, 70%, 25%);
+
+}
+h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+p, ul {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+h3, h4, h5, h6 { 
+	margin-left: 1rem;
+}
+
+h3 {}
+
+ul {
+	padding-left: 1.5rem;
+}
+
+h2 {
+	margin-top: 5rem;
+	padding: 1rem;
+
+	width: 100%;
+
+	/* background: linear-gradient(90deg, white, rgb(50, 50, 200)); */
+	border: solid 2px hsl(138, 70%, 25%);
+	/* background: rgb(200, 200, 255) */
+	border-radius: 1.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.05rem; }
+
+body > img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+code {
+	color: rgb(0, 44, 122);
+}
+
+
+
+figure {
+	margin: 0.5rem;
+	width: 100%;
+	max-width: 100%;
+
+	max-height: 30rem;
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	justify-items: space-between;
+
+	text-align: center;
+}
+
+figcaption {
+	text-align: center;
+}
+
+
+figure img {
+	object-fit: contain;
+	max-width: inherit;
+	max-height: inherit;
+	height: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+figure a {
+	max-width: inherit;
+	max-height: inherit;
+}
+
+.box {
+	margin-left: 1rem;
+	border: 0.1rem solid;
+	border-top: 0.3rem solid;
+	border-radius: 0.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.box.practice {
+	border-color: hsl(182, 100%, 60%);
+	background: hsla(182, 100%, 60%, 0.05)
+}
+.box.task {
+	border-color: hsl(41, 100%, 40%);
+	background: hsla(41, 100%, 40%, 0.05)
+}
+.box.grade {
+	border-color: hsl(12, 100%, 40%);
+	background: hsla(12, 100%, 40%, 0.05)
+}
+
+.box h2,
+.box h3,
+.box h4,
+.box h5 {
+	color: black;
+}
+
+/* img {
+	max-width: 100%;
+} */
+
+div.sourceCode {
+	background: hsla(0, 0%, 0%, 0.05);
+	border-radius: 0.5rem;
+	/* border: hsla(0, 0%, 0%, 0.15) 1px dashed; */
+}
+pre.sourceCode {
+	font-size: 0.9rem;
+	margin-left: 2rem;
+}
+
+code.sourceCode, .sourceCode a {
+	color: black;
+}
+
+pre.sourceCode
+
+/* code span.al { color: #ef2929; } /* Alert */
+code span.an { color: black; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: hsl(215, 77%, 12%); } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: hsl(215, 77%, 12%); font-weight: bold; } /* ControlFlow */
+code span.ch { color: #204a87;; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: hsl(118, 100%, 12%); font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #204a87; } /* SpecialString */
+code span.st { color: #204a87; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #204a87; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+  </style>
+
+</style>
+</head>
+
+<body>
+
+<h1 id="icg-exercise-5-texturing-and-lighting">ICG Exercise 5: Texturing and Lighting</h1>
+<p><nav></p>
+<ul>
+<li><a href="#task-1-billboarding">Task 3.1 - Rendering the billboard</a></li>
+<li><a href="#task-2-phong_lighting">Task 3.2 - Rendering the planets using the Phong lighting model</a></li>
+<li><a href="#task-3-shading_the_earth">Task 3.3 - Combining multiple textures to get day/night, clouds and water specularity effects for the Earth.</a></li>
+</ul>
+<p></nav></p>
+<figure>
+<img src="../doc/resourse_hw5/phong_title.jpg"></img>
+</figure>
+<h2 id="task-3.1-billboarding">Task 3.1: Billboarding</h2>
+<p>The objective is to mimic the glow of the Sun. We will use a technique called <strong>billboarding</strong>, which involves placing a planar object in the scene with a given texture and transforming it to always be oriented perpendicularly to the eye. In our case, the planar object is a square consisting of two triangles; this is already provided to you (see files <em>src/planets.js</em> and class <code>SunBillboardActor</code>).</p>
+<p>Your task is to create the image of a circle whose opacity attenuates with increasing distance from its center until it is fully transparent. Play around with the colors and attenuation factor until you get a visually pleasing result. The Figure below depicts an example of what happens when the opacity attenuation is not strong enough. Please note that each pixel <span class="math inline"><strong>p</strong><sub><strong>i</strong></sub></span> in the texture is defined as 4D vector <span class="math inline"><strong>p</strong><sub><strong>i</strong></sub> = [<em>R</em>, <em>G</em>, <em>B</em>, <em>A</em>]</span>, where the first three dimensions specify the RGB color and the last one the opacity <span class="math inline"><em>A</em> ∈ [0, 1]</span>.</p>
+<figure class="center">
+<img src="../doc/resourse_hw5/glow_too_much.jpg" width="50%" />
+</figure>
+<p style="margin-bottom:3cm;"/>
+<hr />
+<h3 id="task-3.1.0-copy-from-previous-homework">TASK 3.1.0: Copy from Previous Homework</h3>
+<ol type="1">
+<li><p>Complete the function <code>update_cam_transform</code> in <code>../src/main.js</code>.</p></li>
+<li><p>Complete the function <code>calculate_model_matrix</code> in <code>../src/planets.js</code> of class <code>PlanetActor</code>.</p></li>
+<li><p>Complete the shader <code>../src/shaders/unshaded.vert</code>.</p></li>
+</ol>
+<hr />
+<h3 id="task-3.1.1-compute-billboards-model-to-world-matrix">TASK 3.1.1: Compute Billboard’s “model-to-world” matrix</h3>
+<p>You need to transform the billboard according to the current position of the eye. The figure below shows the default orientation of the billboard as well as the required orientation with respect to the eye. Please fill in the code in function <code>calculate_model_matrix</code> of class <code>SunBillboardActor</code> in <code>../src/planets.js</code> to correctly orient the billboard.</p>
+<figure class="center">
+<img src="../doc/resourse_hw5/billboard.svg" width="80%"/>
+<figcaption>
+<strong>Fig. </strong>(a) The default orientation of the billboard in the world coordinate system and (b) the required orientation of the billboard with respect to the eye where <span class="math inline"><strong>n</strong><sub><strong>b</strong></sub></span> is the normal vector of the billboard
+</figcaption>
+</figure>
+<hr />
+<h3 id="task-3.1.2-billboard-shader">TASK 3.1.2: Billboard Shader</h3>
+<p>In <code>../src/shaders/billboard_sunglow.frag</code>, compute the alpha value (opacity) for each fragment. The opacity decreases quickly when the fragment moves away from the center of the sun.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode glsl"><code class="sourceCode glsl"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// compute the intensity value for a given fragment</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">//.. </span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="va">gl_FragColor</span> = <span class="dt">vec4</span>(glow_color, intensity); </a></code></pre></div>
+<hr />
+<h3 id="task-3.1.3-blending-the-color-of-billboard-and-background">TASK 3.1.3 Blending the Color of Billboard and Background</h3>
+<p>In class <code>SunBillboardActor</code> of <code>../src/planets.js</code>, fill in the <code>blend</code> code block.</p>
+<p>To learn about blending in OpenGL, please refer to <a href="https://learnopengl.com/Advanced-OpenGL/Blending">website</a>.</p>
+<p>Please see <a href="https://github.com/regl-project/regl/blob/master/API.md#blending">website</a> for an explanation of how to configure blending in regl.</p>
+<figure class="center">
+<img src="../doc/resourse_hw5/blending_solar.png" width="90%"/>
+<figcaption>
+<strong>Fig. </strong>(a) billboard without blending (b) billboard with blending
+</figcaption>
+</figure>
+<h2 id="task-3.2-phong-lighting-model">Task 3.2: Phong lighting model</h2>
+<p>In this task, you will implement the Phong lighting model and use it to illuminate the planets. Recall the general Phong lighting model definition:</p>
+<figure>
+<br /><span class="math display"><em>I</em> = <em>I</em><sub><em>a</em></sub><em>m</em><sub><em>a</em></sub> + <em>I</em><sub><em>l</em></sub><em>m</em><sub><em>d</em></sub>(<strong>n</strong> ⋅ <strong>l</strong>) + <em>I</em><sub><em>l</em></sub><em>m</em><sub><em>s</em></sub>(<strong>r</strong> ⋅ <strong>v</strong>)<sup><em>s</em></sup></span><br />
+</figure>
+<p>where <span class="math inline"><em>I</em></span> is the final fragment’s intensity, <span class="math inline"><em>I</em><sub><em>a</em></sub></span> is the ambient component of light source, <span class="math inline"><em>I</em><sub><em>l</em></sub></span> is diffuse/specular component of the light source, <span class="math inline"><em>m</em><sub>[<em>a</em>|<em>d</em>|<em>s</em>]</sub></span> is the ambient/diffuse/specular component of the material, <span class="math inline"><em>s</em></span> is the shininess, and <span class="math inline"><strong>n</strong>, <strong>l</strong>, <strong>r</strong>, <strong>v</strong></span> are the normal, light, reflected light, and view vectors, respectively. Recall that the diffuse component is only added if <span class="math inline"><strong>n</strong> ⋅ <strong>l</strong> &gt; 0</span> and the specular component is only added if both <span class="math inline"><strong>n</strong> ⋅ <strong>l</strong> &gt; 0</span> and <span class="math inline"><strong>r</strong> ⋅ <strong>v</strong> &gt; 0</span>.</p>
+<p>In our scene, we consider a single point light source—the Sun (see <code>light_position_world</code> and <code>light_color</code> variables defined in <code>../src/main.js</code>). —which provides the <span class="math inline"><em>I</em><sub><em>l</em></sub></span> component. <span class="math inline"><em>I</em><sub><em>a</em></sub></span> is usually thought of as the combined (and dispersed) contribution of all the light sources in the scene; in this assignment, just use: <span class="math inline"><em>I</em><sub><em>a</em></sub> = <code>ambient</code> * <em>I</em><sub><em>l</em></sub></span>. Both <strong>ambient</strong> and <strong>shininess</strong> can be set during the initialization of the planet class. For all planets except the earth, we’ll assume the material components <span class="math inline"><em>m</em><sub>[<em>a</em>|<em>d</em>|<em>s</em>]</sub></span> are the same and correspond to the RGB color sampled from the texture.</p>
+<p>Compute the required vectors in the vertex shader <code>../src/shaders/phong.vert</code>, which you will then use in the fragment shader <code>../src/shaders/phong.frag</code> (please check the <strong>todo</strong> notes in both source files).</p>
+<p>The vertex shader relies on a couple of uniform variables, namely the modelview matrix, MVP matrix, normal matrix and light position, Please note that the normal matrix defines the transformation of the object’s normals from the model coordinate system to the view coordinate system.</p>
+<h2 id="task-3.3-shading-the-earth">Task 3.3: Shading the Earth</h2>
+<p>This task is to combine multiple textures on the Earth model to show different day and night appearances, to visualize clouds, and to restrict the specular component of the Phong lighting model to the water surfaces unobscured by clouds (we want the mainland to act as a purely diffuse surface).</p>
+<p>Please fill in the fragment shader code in <code>../src/shaders/earth.frag</code> to combine the textures and to apply Phong lighting.</p>
+<p>The gloss and cloud textures are 1-channel (grayscale), whereas the day and night textures are 3-channel (RGB). The gloss and cloud textures together define the amount of specularity we want to use for a given pixel. The gloss texture is binary mask: it indicates whether or not there should be any specular component. The cloud texture allows for partial specularity (if permitted by the gloss mask): changing the cloudiness from 1 to 0 should linearly interpolate the specular component from zero to its full value. Please combine these two textures to compute the appropriate amount of specularity for a given pixel.</p>
+<p>You will compute two different colors—a <code>day color</code> and a <code>night color</code> —and mix them together (linearly interpolate between them) based on the amount of sunlight reaching the fragment; the day color should appear on the hemisphere facing the sun and the night color on the opposite side and they should blend nicely on the border. Hint: you can use the diffuse component coefficient <span class="math inline"><strong>n</strong> ⋅ <strong>l</strong></span> from the Phong lighting model to determine this amount of daylight.</p>
+<p>The first step in computing the day color is to apply the Phong lighting model. As in the previous subtask, model the ambient light component as <span class="math inline"><em>I</em><sub><em>a</em></sub> = <code>ambient</code> * <code>sunlight</code></span>. The ambient and diffuse components of the material, <span class="math inline"><em>m</em><sub><em>a</em></sub></span> and <span class="math inline"><em>m</em><sub><em>d</em></sub></span>, are given by the RGB color sampled from the day texture, but the specular component <span class="math inline"><em>m</em><sub><em>s</em></sub></span> should be pure white (i.e. <span class="math inline"><em>m</em><sub><em>s</em></sub> = [1, 1, 1]</span>). Please do not forget to modulate the specular component of the Phong lighting model by the specularity value computed from the gloss and cloud textures (remember that mainland acts as diffuse surface and cloudiness reduces the specularity). Next, compute the cloud color by applying the Lambertian lighting model (i.e. the Phong lighting model without the specular component) where the material corresponds to RGB color sampled from cloud texture. Finally, mix the color from the Phong lighting calculation with the cloud color by linear interpolation (using the cloud texture grayscale value as the interpolation weight) to obtain the day color.</p>
+<p>The night color is computed by simply linearly interpolating between the color sampled from night texture and black based on the cloudiness level.</p>
+<figure class="center">
+<img src="../doc/resourse_hw5/earth_shading.jpg" width="90%"/>
+<figcaption>
+<strong>Fig. </strong> Shading the Earth
+</figcaption>
+</figure>
+<h2 id="task-3.4-solar-surface-disturbance">Task 3.4: Solar surface disturbance</h2>
+<p>(NOTE: this section is optional and it is NOT graded.) In this task, you will implement a gradual distortion of the Sun’s geometry so that it resembles an oscillating fluid. Please create a new class called <code>Sun</code> in <code>../src/planets</code> and use <code>../src/shaders/sun.vert</code> as its vertex shader. Please see the <strong>todo</strong> notes in <code>../src/shaders/sun.vert</code> vertex shader for further instructions.</p>
+<h2 id="what-to-submit">What to submit</h2>
+<p>A .zip compressed file named <code>ExerciseN-GroupG.zip</code>, where <em>N</em> is the number of the current exercise sheet, and <em>G</em> is the number of your group. It should contain only:</p>
+<ul>
+<li>The files you changed.</li>
+<li>A couple screenshots clearly showing that you can display the planets and that you can turn and zoom the camera.</li>
+<li>A <code>readme.txt</code> file containing a description of how you solved each part of the exercise (use the same numbers and titles) and whatever problems you encountered. <em>Indicate what fraction of the total workload each project member contributed.</em></li>
+</ul>
+<p>Submit solutions to Moodle before the deadline. Late submissions receive 0 points!</p>
+<div class="box grade">
+<h3 id="grading">Grading</h3>
+<ul>
+<li><strong>30%</strong> Task 3.1: billboarding</li>
+<li><strong>30%</strong> Task 3.2: Phong lighting model</li>
+<li><strong>40%</strong> Task 3.3: shading the Earth</li>
+</ul>
+</div>
+
+</body> 
+

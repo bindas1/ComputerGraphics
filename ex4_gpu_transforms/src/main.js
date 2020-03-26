@@ -145,7 +145,7 @@ async function main() {
 
 		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
 		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
-		let mat_trans = mat4.fromTranslation(mat4.create(), [r / 2, 0, 0] )
+		let mat_trans = mat4.fromTranslation(mat4.create(), [r, 0, 0] )
 
 		// Example camera matrix, looking along forward-X, edit this
 		const look_at = mat4.lookAt(mat4.create(),
