@@ -268,7 +268,17 @@ class SunBillboardActor extends Actor {
 			// For rendering transparent objects and blending it with the background color, please refer to https://learnopengl.com/Advanced-OpenGL/Blending
 			// For using the regl blending API, please refer to https://github.com/regl-project/regl/blob/master/API.md#blending
 			blend : {
-
+				enable: true,
+				func: {
+					srcRGB: 'src alpha',
+					srcAlpha: 1,
+					dstRGB: 'one minus src alpha',
+					dstAlpha: 1
+				},
+				equation: {
+					rgb: 'add',
+					alpha: 'add'
+				}
 			}
 		}));
 	}
@@ -281,9 +291,42 @@ class SunBillboardActor extends Actor {
 	}
 
 	calculate_model_matrix({camera_position}) {
-
 		// TODO 3.1.1: Compute the this.mat_model_to_world, which makes the normal of the billboard always point to our eye.
-		mat4.identity(this.mat_model_to_world)
+
+		// const draw_info = {
+		// 	sim_time: sim_time,
+		// 	mat_view: mat_view,
+		// 	mat_projection: mat_projection,
+		// 	light_position_cam: light_position_cam,
+		// 	camera_position: camera_position,
+		// }
+
+		let nb = vec3.normalize(vec3.create(), camera_position)
+		// let z = vec3.fromValues(0,0,1)
+		let y = vec3.fromValues(0,1,0)
+		let x = vec3.fromValues(1,0,0)
+
+		// let cam_angle_z = Math.PI * 0.2; // in radians!
+		// let cam_angle_y = -Math.PI / 6; // in radians!
+
+		// let cam_angle_z = Math.acos(vec3.dot(nb, z))
+		let cam_angle_y = Math.acos(vec3.dot(nb, y))
+		let cam_angle_x = Math.acos(vec3.dot(nb, x))
+
+		let mat_rotX = mat4.fromXRotation(mat4.create(), cam_angle_x)
+		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
+		// let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
+		// let mat_trans = mat4.fromTranslation(mat4.create(), [1, 0, 0] )
+
+		const look_at = mat4.lookAt(mat4.create(),
+		camera_position, // camera position in world coord
+		[0, 0, 0], // view target point
+		[0, 0, 1], // up vector
+	);
+
+		mat4_matmul_many(this.mat_model_to_world, look_at, mat_rotY, mat_rotX); // edit this
+
+		// mat4.identity(this.mat_model_to_world)
 
 	}
 

@@ -263,12 +263,12 @@ async function main() {
 		const mat_scale = mat4.fromScaling(mat4.create(), [actor.size, actor.size, actor.size])
 
 		if(actor.orbits !== null) {
-			// Parent's translation	
+			// Parent's translation
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
             const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
 
 			const angle_orbit = sim_time * actor.orbit_speed + actor.orbit_phase
-			
+
 			const mat_rotOrbit = mat4.fromZRotation(mat4.create(), angle_orbit)
 
 			const radius = actor.orbit_radius
