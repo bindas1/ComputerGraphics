@@ -23,7 +23,7 @@ async function main() {
 	regl_global_handle = regl;
 	// The <canvas> (HTML element for drawing graphics) was created by REGL, lets take a handle to it.
 	const canvas_elem = document.getElementsByTagName('canvas')[0];
-	
+
 	const debug_text = document.getElementById('debug-text');
 
 
@@ -40,7 +40,7 @@ async function main() {
 	OR
 	* run chromium with CLI flag
 		"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files index.html
-		
+
 	* edit config in firefox
 		security.fileuri.strict_origin_policy = false
 	*/
@@ -65,7 +65,7 @@ async function main() {
 		'shader_billboard_frag': load_text('./src/shaders/billboard_sunglow.frag'),
 		'shader_sun_vert' : load_text('./src/shaders/sun.vert'),
 	}
-	
+
 	// Wait for all downloads to complete
 	for (const key in resources) {
 		if (resources.hasOwnProperty(key)) {
@@ -81,7 +81,7 @@ async function main() {
 	/*---------------------------------------------------------------
 		GPU pipeline
 	---------------------------------------------------------------*/
-	
+
 	const mat_projection = mat4.create();
 
 	/*---------------------------------------------------------------
@@ -89,7 +89,7 @@ async function main() {
 	---------------------------------------------------------------*/
 	const mat_world_to_cam = mat4.create();
 	const cam_distance_base = 15;
-	
+
 	let cam_angle_z = Math.PI * 0.2; // in radians!
 	let cam_angle_y = -Math.PI / 6; // in radians!
 	let cam_distance_factor = 1.;
@@ -97,7 +97,7 @@ async function main() {
 	function update_cam_transform() {
 		/* TODO 2.2
 		Calculate the world-to-camera transformation matrix.
-		The camera orbits the scene 
+		The camera orbits the scene
 		* cam_distance_base * cam_distance_factor = distance of the camera from the (0, 0, 0) point
 		* cam_angle_z - camera ray's angle around the Z axis
 		* cam_angle_y - camera ray's angle around the Y axis
@@ -256,7 +256,7 @@ async function main() {
 			if(grid_on) draw_grid(mat_projection, mat_view);
 		}
 	};
-		
+
 
 	/*---------------------------------------------------------------
 		Frame render
@@ -264,10 +264,10 @@ async function main() {
 
 	// List of objects to draw
 	// TODO: add the billboard and planets once you finish their shaders
-	//const draw_list = actors_list.slice();
-	const draw_list = [actors_list[0]]; //only render the sun
+	const draw_list = actors_list.slice();
+	// const draw_list = [actors_list[0]]; //only render the sun
 	draw_list.push(grid_actor_interface);
-	//draw_list.push(billboard); //add the billboard shader
+	draw_list.push(billboard); //add the billboard shader
 
 	// Consider the sun, which locates at [0, 0, 0], as the only light source
 	const light_position_world = [0, 0, 0, 1];
@@ -292,7 +292,7 @@ async function main() {
 		}
 		prev_regl_time = frame.time;
 
-		mat4.perspective(mat_projection, 
+		mat4.perspective(mat_projection,
 			deg_to_rad * 60, // fov y
 			frame.framebufferWidth / frame.framebufferHeight, // aspect ratio
 			0.01, // near
@@ -368,4 +368,3 @@ cam pos ${vec_to_string(camera_position)}
 }
 
 DOM_loaded_promise.then(main);
-
