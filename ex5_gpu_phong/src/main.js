@@ -361,7 +361,7 @@ async function main() {
 
 		debug_text.textContent = `
 Hello! Sim time is ${sim_time.toFixed(2)} s
-Camera: angle_z ${(cam_angle_z / deg_to_rad).toFixed(1)}, angle_y ${(cam_angle_y / deg_to_rad).toFixed(1)}, distance ${(cam_distance_factor*cam_distance_base).toFixed(1)}
+Camera: angle_z ${(cam_angle_z / deg_to_rad).toFixed(1)}, angle_y ${(cam_angle_y / deg_to_rad).toFixed(1)},  distance ${(cam_distance_factor*cam_distance_base).toFixed(1)}
 cam pos ${vec_to_string(camera_position)}
 `;
 	})

@@ -293,38 +293,50 @@ class SunBillboardActor extends Actor {
 	calculate_model_matrix({camera_position}) {
 		// TODO 3.1.1: Compute the this.mat_model_to_world, which makes the normal of the billboard always point to our eye.
 
-		// const draw_info = {
-		// 	sim_time: sim_time,
-		// 	mat_view: mat_view,
-		// 	mat_projection: mat_projection,
-		// 	light_position_cam: light_position_cam,
-		// 	camera_position: camera_position,
-		// }
-
 		let nb = vec3.normalize(vec3.create(), camera_position)
-		// let z = vec3.fromValues(0,0,1)
+		let z = vec3.fromValues(0,0,1)
 		let y = vec3.fromValues(0,1,0)
 		let x = vec3.fromValues(1,0,0)
 
-		// let cam_angle_z = Math.PI * 0.2; // in radians!
-		// let cam_angle_y = -Math.PI / 6; // in radians!
+	// 	let temp = vec3.dot(nb, x)
+	// 	let nbx = vec3.fromValues(temp,0,0)
+	// 	let cam_angle_z = Math.acos(vec3.dot(nbx, z))
+	// 	let mat_rot1 = mat4.fromYRotation(mat4.create(), cam_angle_z)
 
-		// let cam_angle_z = Math.acos(vec3.dot(nb, z))
-		let cam_angle_y = Math.acos(vec3.dot(nb, y))
-		let cam_angle_x = Math.acos(vec3.dot(nb, x))
+		// let temp2 = vec3.dot(nb, y)
+		// let nby = vec3.fromValues(0, temp2, 0)
 
-		let mat_rotX = mat4.fromXRotation(mat4.create(), cam_angle_x)
-		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
-		// let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
-		// let mat_trans = mat4.fromTranslation(mat4.create(), [1, 0, 0] )
+		let nb_for_z = vec3.normalize(vec3.create(), [camera_position[0], camera_position[1], 0])
+		let dot_product_for_z = vec3.dot(nb_for_z, x)
+		let cam_angle_for_z = Math.acos(dot_product_for_z)
+		let condition_angle_more_than_90 = vec3.dot(nb_for_z, y) //name bad. idk what to name this
+		if (condition_angle_more_than_90 < 0){ //for when the angle > 90 degree so need to adjust angle
+			cam_angle_for_z = Math.PI - cam_angle_for_z
+		}
 
-		const look_at = mat4.lookAt(mat4.create(),
-		camera_position, // camera position in world coord
-		[0, 0, 0], // view target point
-		[0, 0, 1], // up vector
-	);
+		let nb_fory = vec3.normalize(vec3.create(), [camera_position[0], 0, camera_position[2]])
+		let cam_angle_fory = Math.acos(vec3.dot(nb_fory, z))
 
-		mat4_matmul_many(this.mat_model_to_world, look_at, mat_rotY, mat_rotX); // edit this
+	// 	let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
+	// 	let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
+	// 	// let mat_trans = mat4.fromTranslation(mat4.create(), [1, 0, 0] )
+
+	// 	const look_at = mat4.targetTxo(mat4.create(),
+	// 	camera_position, // camera position in world coord
+	// 	[0,0,0], // view target point
+	// 	[0, 0, 1], // up vector
+	// );
+
+	// 	// let dist = vec3.squaredDistance(vec3.create(), nb)
+
+		// console.log(cam_angle_for_z)
+
+		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_for_z)
+		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_fory)
+		let dist = 10
+		const mat_scale = mat4.fromScaling(mat4.create(), [dist, dist, dist])
+		let mat_trans = mat4.fromTranslation(mat4.create(), vec3.fromValues(0,0,2))
+		mat4_matmul_many(this.mat_model_to_world, mat_rotZ, mat_scale); // edit this
 
 		// mat4.identity(this.mat_model_to_world)
 
