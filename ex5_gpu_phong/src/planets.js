@@ -278,7 +278,8 @@ class SunBillboardActor extends Actor {
 				equation: {
 					rgb: 'add',
 					alpha: 'add'
-				}
+				},
+			
 			}
 		}));
 	}
@@ -310,8 +311,8 @@ class SunBillboardActor extends Actor {
         let mat_rot = mat4.fromRotation(mat4.create(), -angle, axis)
 
         // let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_for_z)
-        // let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_for_y)
-        let dist = 10
+        // let mat_roY = mat4.fromYRotation(mat4.create(), cam_angle_for_y)
+        let dist = 8
         const mat_scale = mat4.fromScaling(mat4.create(), [dist, dist, dist])
         // let mat_trans = mat4.fromTranslation(mat4.create(), vec3.fromValues(0,0,2))
         mat4_matmul_many(this.mat_model_to_world, mat_rot, mat_scale); // edit this
