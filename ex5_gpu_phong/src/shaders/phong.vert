@@ -18,6 +18,9 @@ uniform mat4 mat_mvp;
 uniform mat4 mat_model_view;
 uniform mat3 mat_normals; // mat3 not 4, because normals are only rotated and not translated
 
+// normal matrix defines the transformation of the object’s normals
+// from the model coordinate system to the view coordinate system.
+
 uniform vec4 light_position; //in camera space coordinates already
 
 void main() {
@@ -32,12 +35,11 @@ void main() {
     Hint: Write the final vertex position to gl_Position
     */
 	// viewing vector (from camera to vertex in view coordinates), camera is at vec3(0, 0, 0) in cam coords
-	v2f_dir_from_view = vec3(1, 0, 0); // TODO calculate
+	v2f_dir_from_view = mat_normals * position;//v
 	// direction to light source
-	v2f_dir_to_light = vec3(0, 1, 0); // TODO calculate
+	v2f_dir_to_light = vec3(light_position[0],light_position[1],light_position[2]) ; //r
 	// transform normal to camera coordinates
-	v2f_normal = normal; // TODO apply normal transformation
-	
-	gl_Position = vec4(position, 1); // TODO apply mvp matrix
-}
+	v2f_normal = mat_normals * normal; //n
 
+	gl_Position = mat_mvp * vec4(position, 1); // TODO apply mvp matrix
+}
