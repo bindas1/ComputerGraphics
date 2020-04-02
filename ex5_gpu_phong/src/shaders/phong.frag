@@ -34,8 +34,8 @@ void main() {
     vec3 ambient_light = ambient * Il_times_ma_md_ms;
 
     vec3 vLight = normalize(v2f_dir_to_light);
-    float dotNL = dot(v2f_normal, vLight);
-    vec3 r = 2.0 * dotNL * v2f_normal - vLight;
+    float dotNL = dot(normalize(v2f_normal), vLight);
+    vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
     vec3 v = normalize(v2f_dir_from_view);
     vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
 

@@ -279,7 +279,7 @@ class SunBillboardActor extends Actor {
 					rgb: 'add',
 					alpha: 'add'
 				},
-			
+
 			}
 		}));
 	}
@@ -295,26 +295,13 @@ class SunBillboardActor extends Actor {
 		// TODO 3.1.1: Compute the this.mat_model_to_world, which makes the normal of the billboard always point to our eye.
         let nb = vec3.normalize(vec3.create(), camera_position)
         let z = vec3.fromValues(0,0,1)
-        let y = vec3.fromValues(0,1,0)
-        let x = vec3.fromValues(1,0,0)
-
-        // let nb_for_z = vec3.normalize(vec3.create(), [camera_position[0], camera_position[1], 0])
-        // let cam_angle_for_z = Math.acos(vec3.dot(nb_for_z, x))
-        // let condition_angle_more_than_90 = vec3.dot(nb_for_z, y) //name bad. idk what to name this
-        // if (condition_angle_more_than_90 < 0){ //for when the angle > 90 degree so need to adjust angle
-        //     cam_angle_for_z = Math.PI - cam_angle_for_z
-        // }
 
         let angle = Math.acos(vec3.dot(nb, z))
         let axis = vec3.cross(vec3.create(), nb, z)
-        console.log(axis)
         let mat_rot = mat4.fromRotation(mat4.create(), -angle, axis)
 
-        // let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_for_z)
-        // let mat_roY = mat4.fromYRotation(mat4.create(), cam_angle_for_y)
         let dist = 8
         const mat_scale = mat4.fromScaling(mat4.create(), [dist, dist, dist])
-        // let mat_trans = mat4.fromTranslation(mat4.create(), vec3.fromValues(0,0,2))
         mat4_matmul_many(this.mat_model_to_world, mat_rot, mat_scale); // edit this
 
 	}

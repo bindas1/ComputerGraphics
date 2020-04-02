@@ -264,8 +264,8 @@ async function main() {
 
 	// List of objects to draw
 	// TODO: add the billboard and planets once you finish their shaders
-	// const draw_list = actors_list.slice();
-	const draw_list = [actors_list[0]]; //only render the sun
+	const draw_list = actors_list.slice();
+	// const draw_list = [actors_list[0]]; //only render the sun
 	draw_list.push(grid_actor_interface);
 	draw_list.push(billboard); //add the billboard shader
 
