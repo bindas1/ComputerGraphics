@@ -10,5 +10,5 @@ void main()
 {
 	// TODO 3.1.2 compute the alpha value of each fragment
 	// The alpha value of this fragment exponentially decrease when the v2f_tex_coord is away from the center
-	gl_FragColor = vec4(glow_color, 1./exp(v2f_tex_coord));
+	gl_FragColor = vec4(glow_color, 1./exp(1.3*length(v2f_tex_coord)));
 }
