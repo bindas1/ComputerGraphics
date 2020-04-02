@@ -298,25 +298,43 @@ class SunBillboardActor extends Actor {
 		let y = vec3.fromValues(0,1,0)
 		let x = vec3.fromValues(1,0,0)
 
-	// 	let temp = vec3.dot(nb, x)
-	// 	let nbx = vec3.fromValues(temp,0,0)
-	// 	let cam_angle_z = Math.acos(vec3.dot(nbx, z))
-	// 	let mat_rot1 = mat4.fromYRotation(mat4.create(), cam_angle_z)
-
-		// let temp2 = vec3.dot(nb, y)
-		// let nby = vec3.fromValues(0, temp2, 0)
-
 		let nb_for_z = vec3.normalize(vec3.create(), [camera_position[0], camera_position[1], 0])
-		let dot_product_for_z = vec3.dot(nb_for_z, x)
-		let cam_angle_for_z = Math.acos(dot_product_for_z)
+		let cam_angle_for_z = Math.acos(vec3.dot(nb_for_z, x))
 		let condition_angle_more_than_90 = vec3.dot(nb_for_z, y) //name bad. idk what to name this
 		if (condition_angle_more_than_90 < 0){ //for when the angle > 90 degree so need to adjust angle
 			cam_angle_for_z = Math.PI - cam_angle_for_z
 		}
 
-		let nb_fory = vec3.normalize(vec3.create(), [camera_position[0], 0, camera_position[2]])
-		let cam_angle_fory = Math.acos(vec3.dot(nb_fory, z))
+		//basically xy
+		let to_be_projected_on = vec3.normalize(vec3.create(), [camera_position[0], camera_position[1], 0])
+		// let nb_for_y = vec3.normalize(vec3.create(), [camera_position[0], 0, camera_position[2]])
+		let dot = vec3.dot(nb, to_be_projected_on)
+		let cam_angle_for_y = Math.acos(dot)
 
+		let condition_angle_more_than_90_y = vec3.dot(nb, z) //name bad. idk what to name this
+
+		if (condition_angle_more_than_90_y > 0 && dot > 0){
+
+			cam_angle_for_y = Math.PI/2 - cam_angle_for_y
+
+		} else if (condition_angle_more_than_90_y < 0 && dot < 0){
+			cam_angle_for_y = Math.PI/2 + cam_angle_for_y
+		} else if (condition_angle_more_than_90_y < 0 && dot > 0){
+			cam_angle_for_y = -(Math.PI/2 + cam_angle_for_y)
+		} else {
+			cam_angle_for_y = -(Math.PI/2 + cam_angle_for_y)
+		}
+
+		// if (condition_angle_more_than_90_y > 0 && dot > 0 || (condition_angle_more_than_90_y < 0 && dot < 0)){
+		// 	cam_angle_for_y = Math.PI/2 - cam_angle_for_y
+		// } else{
+		// 	cam_angle_for_y = Math.PI/2 + cam_angle_for_y
+		// }
+
+		// let condition_angle_more_than_90_y = vec3.dot(nb_for_y, x) //name bad. idk what to name this
+		// if (condition_angle_more_than_90_y < 0){ //for when the angle > 90 degree so need to adjust angle
+		// 	cam_angle_for_y = Math.PI - cam_angle_for_y
+		// }
 	// 	let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
 	// 	let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
 	// 	// let mat_trans = mat4.fromTranslation(mat4.create(), [1, 0, 0] )
@@ -332,11 +350,11 @@ class SunBillboardActor extends Actor {
 		// console.log(cam_angle_for_z)
 
 		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_for_z)
-		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_fory)
+		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_for_y)
 		let dist = 10
 		const mat_scale = mat4.fromScaling(mat4.create(), [dist, dist, dist])
 		let mat_trans = mat4.fromTranslation(mat4.create(), vec3.fromValues(0,0,2))
-		mat4_matmul_many(this.mat_model_to_world, mat_rotZ, mat_scale); // edit this
+		mat4_matmul_many(this.mat_model_to_world, mat_rotZ, mat_rotY, mat_scale); // edit this
 
 		// mat4.identity(this.mat_model_to_world)
 
