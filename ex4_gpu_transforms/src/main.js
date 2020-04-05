@@ -265,7 +265,7 @@ async function main() {
 		if(actor.orbits !== null) {
 			// Parent's translation
 			const parent_translation_v = mat4.getTranslation([0, 0, 0], actor.orbits.mat_model_to_world);
-            const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
+      const mat_trans_parent = mat4.fromTranslation(mat4.create(), parent_translation_v)
 
 			const angle_orbit = sim_time * actor.orbit_speed + actor.orbit_phase
 
