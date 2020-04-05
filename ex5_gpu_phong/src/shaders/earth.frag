@@ -64,9 +64,10 @@ void main()
     vec3 Il_times_m_s = light_color;
     bool has_gloss = texture2D(texture_gloss, v2f_tex_coord)[0] != 0.0;
     if (dot(r,v) > 0.0 && has_gloss) { //the gloss is cond for specular
-        // float clouds = texture2D(texture_clouds, v2f_tex_coord)[0];
+        float clouds = texture2D(texture_clouds, v2f_tex_coord)[0];
         vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_m_s;
-        intens += specular_light;
+        vec3 specular_light_after_clouds = mix(specular_light, vec3(0,0,0), clouds);
+        intens += specular_light_after_clouds;
     }
 
 	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range
