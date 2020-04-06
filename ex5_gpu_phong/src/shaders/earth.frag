@@ -81,7 +81,8 @@ void main()
         vec3 specular_light_after_clouds = mix(specular_light, vec3(0,0,0), clouds) * gloss;
         intens += specular_light_after_clouds;
     }
-
+  
+  
     // // clouds diffuse
     // vec3 m_cloud_night = texture2D(texture_clouds, v2f_tex_coord).rgb;
     // vec3 Il_times_m_night = vec3(light_color.r * m_night.r, light_color.g * m_night.g, light_color.b * m_night.b);
