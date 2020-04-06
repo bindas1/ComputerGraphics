@@ -78,7 +78,7 @@ void main()
         float gloss = texture2D(texture_gloss, v2f_tex_coord)[0]; //the gloss is cond for specular
         float clouds = texture2D(texture_clouds, v2f_tex_coord)[0]; //lin interpolate
         vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_m_s;
-        vec3 specular_light_after_clouds = mix(vec3(0,0,0), specular_light, clouds) * gloss;
+        vec3 specular_light_after_clouds = mix(specular_light, vec3(0,0,0), clouds) * gloss;
         intens += specular_light_after_clouds;
     }
 
