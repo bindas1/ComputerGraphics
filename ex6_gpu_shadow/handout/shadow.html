@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> ICG Exercise 6 - Shadows and Cube Mapping </title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+	max-width: 60rem;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-family: sans-serif;
+	font-size: 1.1rem;
+	line-height: 120%;
+
+	text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6, a
+{
+	/* color: rgb(50, 90, 200); */
+	color: hsl(138, 70%, 25%);
+
+}
+h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+p, ul {
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+h3, h4, h5, h6 { 
+	margin-left: 1rem;
+}
+
+h3 {}
+
+ul {
+	padding-left: 1.5rem;
+}
+
+h2 {
+	margin-top: 5rem;
+	padding: 1rem;
+
+	width: 100%;
+
+	/* background: linear-gradient(90deg, white, rgb(50, 50, 200)); */
+	border: solid 2px hsl(138, 70%, 25%);
+	/* background: rgb(200, 200, 255) */
+	border-radius: 1.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.05rem; }
+
+body > img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+code {
+	color: rgb(0, 44, 122);
+}
+
+
+
+figure {
+	margin: 0.5rem;
+	width: 100%;
+	max-width: 100%;
+
+	max-height: 30rem;
+
+	text-align: center;
+}
+
+figcaption {
+	margin: 0.5rem;
+	width: 100%;
+	max-width: 100%;
+
+	max-height: 30rem;
+
+	text-align: center;
+}
+
+figurecaption img {
+	object-fit: contain;
+	max-width: inherit;
+	max-height: inherit;
+	height: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	align: middle;
+}
+
+figcaption.justified {
+    text-align: justify;
+}
+
+figure img {
+	object-fit: contain;
+	max-width: inherit;
+	max-height: inherit;
+	height: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	align: middle;
+}
+
+figure a {
+	max-width: inherit;
+	max-height: inherit;
+}
+
+.box {
+	margin-left: 1rem;
+	border: 0.1rem solid;
+	border-top: 0.3rem solid;
+	border-radius: 0.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.box.practice {
+	border-color: hsl(182, 100%, 60%);
+	background: hsla(182, 100%, 60%, 0.05)
+}
+.box.task {
+	border-color: hsl(41, 100%, 40%);
+	background: hsla(41, 100%, 40%, 0.05)
+}
+.box.grade {
+	border-color: hsl(12, 100%, 40%);
+	background: hsla(12, 100%, 40%, 0.05)
+}
+
+.box h2,
+.box h3,
+.box h4,
+.box h5 {
+	color: black;
+}
+
+/* img {
+	max-width: 100%;
+} */
+
+div.sourceCode {
+	background: hsla(0, 0%, 0%, 0.05);
+	border-radius: 0.5rem;
+	/* border: hsla(0, 0%, 0%, 0.15) 1px dashed; */
+}
+pre.sourceCode {
+	font-size: 0.9rem;
+	margin-left: 2rem;
+}
+
+code.sourceCode, .sourceCode a {
+	color: black;
+}
+
+pre.sourceCode
+
+/* code span.al { color: #ef2929; } /* Alert */
+code span.an { color: black; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: hsl(215, 77%, 12%); } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: hsl(215, 77%, 12%); font-weight: bold; } /* ControlFlow */
+code span.ch { color: #204a87;; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: hsl(118, 100%, 12%); font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #204a87; } /* SpecialString */
+code span.st { color: #204a87; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #204a87; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+
+<link rel="stylesheet" href="3rdparty/pseudocode.min.css">
+<script src="3rdparty/pseudocode.min.js"></script>
+<script src="3rdparty/katex/katex.min.js"></script>
+</head>
+
+<body>
+
+<h1 id="icg-exercise-6-shadows-and-cube-mapping">ICG Exercise 6: Shadows and Cube Mapping</h1>
+<p>Deadline: Thursday, 9/3/2020 at 23:59.</p>
+<p>In this assignment, you will implement a real-time shadowing technique for multiple omni-directional point lights. We will be using a new framework code, but it should seem very familiar to you; it’s using the same libraries as the solar system codebase.</p>
+<p><nav></p>
+<ul>
+<li><a href="#task-4.1-building-view-and-projection-matrices-for-a-cube-face">Task 4.1 - Constructing view and projection matrices for rendering each light’s shadow map</a></li>
+<li><a href="#task-4.2-shaders-and-blend-options">Task 4.2 - Writing the GLSL shaders to draw the shadow maps and accumulate the diffuse and specular light contributions to the rendered scene.</a></li>
+</ul>
+<p></nav></p>
+<h2 id="review-on-phong-lighting-and-shadows">Review on Phong Lighting and Shadows</h2>
+<p>Recall the Phong illumination model you’ve used in the previous assignments:</p>
+<figure>
+<img src="../doc/phong_lighting_diagram.png" alt="I = I_{a}m_{a} + \sum_l I_{l}m_{d}(\mathbf{n}\cdot \mathbf{l}) + I_{l}m_{s}(\mathbf{r} \cdot \mathbf{v})^{s}," id="fig:singleShadowma" style="width:60.0%" /><figcaption><br /><span class="math display"><em>I</em> = <em>I</em><sub><em>a</em></sub><em>m</em><sub><em>a</em></sub> + ∑<sub><em>l</em></sub><em>I</em><sub><em>l</em></sub><em>m</em><sub><em>d</em></sub>(<strong>n</strong> ⋅ <strong>l</strong>) + <em>I</em><sub><em>l</em></sub><em>m</em><sub><em>s</em></sub>(<strong>r</strong> ⋅ <strong>v</strong>)<sup><em>s</em></sup>,</span><br /></figcaption>
+</figure>
+<p>where the final fragment’s intensity, <span class="math inline"><em>I</em></span>, is computed adding specular and diffuse contributions from each light, <span class="math inline"><em>l</em></span>, atop the ambient contribution. Here <span class="math inline"><em>I</em><sub><em>a</em></sub></span> is the ambient light intensity, <span class="math inline"><em>I</em><sub><em>l</em></sub></span> is diffuse/specular intensity of light source <span class="math inline"><em>l</em></span>, <span class="math inline"><em>m</em><sub>[<em>a</em>|<em>d</em>|<em>s</em>]</sub></span> is the ambient/diffuse/specular component of the material, <span class="math inline"><em>s</em></span> is the shininess, and <span class="math inline"><strong>n</strong>, <strong>l</strong>, <strong>r</strong>, <strong>v</strong></span> are the normal, light, reflected light, and view vectors respectively.</p>
+<p>Remember that, in the second raytracing assignment, you computed shadows by neglecting the contributions from lights that are obscured by other scene geometry. To do this, you cast a <strong>shadow ray</strong> from the point being lit, ''<span class="math inline"><strong>p</strong></span>'', to the light to check if there was an intersection between the two.</p>
+<p>An equivalent formulation of this test, which we will see is more compatible with the WebGL/regl rasterization pipeline, is to instead cast a ray from the light toward the point and check if there is any intersection <strong>closer</strong> to the light than <span class="math inline"><strong>p</strong></span> is. If so, then <span class="math inline"><strong>p</strong></span> is in a shadow, and no diffuse or specular components from this light should be added.</p>
+<figure>
+<img src="../doc/shadow_unoccluded.svg" style="width:35.0%" /> <img src="../doc/shadow_occluded.svg" style="width:35.0%" />
+</figure>
+<h2 id="real-time-shadows-with-shadow-mapping">Real-time Shadows with Shadow Mapping</h2>
+<p>The nice thing about this new shadow test formulation is that determining the first intersection of a whole frustum of rays with a scene is exactly the problem GPU rasterization pipeline solves: we can simply render the scene from the perspective of the light to determine the distance of the closest intersection along every light ray. The resulting grayscale image of distance values is called a shadow map:</p>
+<figure class="center">
+<img src="../doc/shadow_map_figure_left.png" style="width:35.0%" /> <img src="../doc/shadow_map_figure_right.png" style="width:35.0%" />
+</figure>
+<figcaption>
+From Akenine-Moller, “Real-Time Rendering.”
+</figcaption>
+<p>Then, when computing the lighting for point <span class="math inline"><strong>p</strong></span>, we can compare its distance from the light against the corresponding ray’s intersection distance value stored in this shadow map. This test involves only an efficient, constant-time texture look-up operation.</p>
+<p>Shadow mapping implementations traditionally store the depth buffer (or <code>z-buffer</code>) value in the shadow map. However, for omnidirectional lighting, it will be simpler to instead work with <strong>the Euclidean distance from the light to the intersection point</strong>.</p>
+<p>With this approach, we need the following multi-pass rendering process:</p>
+<div style="width: 70%; margin: 0 auto;">
+<pre id="shadowmapPseudocode" style="display:hidden;">
+\begin{algorithm}
+\caption{Phong Lighting with Shadow Maps}
+\begin{algorithmic}
+    \ForAll{rasterized fragments ``$\mathbf{p}$''}
+        \State $I(\mathbf{p}) \gets \texttt{ambient\_contribution}$
+    \EndFor
+    \For{lights $l$ in the scene}
+        \State Draw shadow map for $l$ by computing distances to each fragment seen by $l$
+        \ForAll{rasterized fragments ``$\mathbf{p}$''}
+            \If{$\texttt{length}(\mathbf{p} - l.\texttt{pos}) < \texttt{shadowmap\_depth}$}
+                \State $I(\mathbf{p}) \gets I(\mathbf{p}) + \texttt{diffuse\_specular\_contribution}$
+            \EndIf
+        \EndFor
+    \EndFor
+\end{algorithmic}
+\end{algorithm}
+</pre>
+</div>
+<script>
+pseudocode.renderElement(document.getElementById("shadowmapPseudocode"));
+</script>
+<p>In our implementation, the loops over rasterized fragments will be executed by the fragment shaders <code>../src/shaders/ambient_color.frag</code> and <code>../src/shaders/phong_shadow.frag</code>. The shadow map distance values are written by <code>..src/shaders/shadowmap_gen.frag</code>.</p>
+<h2 id="cube-mapping">Cube Mapping</h2>
+<p>Because we are working with <strong>omnidirectional</strong> point lights, our situation is a bit more complicated. It’s not possible to set up a single view frustum to render the light rays emanating in all directions. Instead, we will set up <span class="math inline">6</span> different view frustums—one for each face of an imaginary cube surrounding our light—and take advantage of the GPU’s cube-mapping functionality.</p>
+<p>One such frustum together with its corresponding shadow map is depicted in Figure below. Please note that, when the eye is placed inside the light cube to render the shadow map, we will refer to it as the <strong>light camera</strong> to distinguish it from the viewpoint used to render the image on screen.</p>
+<figure>
+<img src="../doc/src/shadow_cube.svg" width="70%"/>
+<figcaption class="justified">
+Figure 1. (a) The shadow cube map for the omnidirectional point light source <span class="math inline"><strong>L</strong></span>. It is necessary to render a separate shadow map texture for each of the six cube faces. Here, the setup for rendering <code>face 3</code>’s map is visualized. The coordinate axes indicate the orientation of the light camera used to render the shadow map; as usual for OpenGL, the camera looks along the -<code>z axis</code>. (b) The resulting shadow map texture (darker is closer).
+</figcaption>
+</figure>
+<p>A cube map texture is really a collection of <span class="math inline">6</span> textures that are conceptually attached to the faces of a cube. Instead of sampling this cube map with 2D texture coordinates <span class="math inline">(<em>s</em>, <em>t</em>)</span>, you sample it with a 3D vector <span class="math inline">(<em>s</em>, <em>t</em>, <em>r</em>)</span>; the GPU then returns the color of the point on the cube where this 3D vector pierces through:</p>
+<figure>
+<img src="../doc/cubemap_sample.png" width="40%"/>
+</figure>
+<p>This sampling mechanism is a perfect fit for our shadow mapping problem: if we sample the cube map with the shadow ray vector pointing from the light to <span class="math inline"><strong>p</strong></span>, it will pull out the intersection distance value for this ray (as long as we correctly rendered each face’s shadow map).</p>
+<p>The <span class="math inline">6</span> texture images making up the cube map are oriented as follows:</p>
+<figure>
+<img src="../doc/cube_map_unfolded_wiki.png" alt="Figure 2. Cube mapping texture coordinate systems (from Wikipedia)." style="width:60.0%" /><figcaption>Figure 2. Cube mapping texture coordinate systems (from <a href="https://en.wikipedia.org/wiki/Cube_mapping">Wikipedia</a>).</figcaption>
+</figure>
+<p>They are wrapped around the cube as shown in Figure 2. An example of how these shadow maps will be drawn is shown in Figure 1.</p>
+<figure>
+<img src="../doc/shadow_cube_faces_and_light_camera_coord_systems.svg"/>
+<figcaption class="justified">
+Figure 3. (a) Names of the shadow map cube faces used in this assignment. (b-d) Example of the light camera coordinate axes oriented to render faces 0, 2, and 4, respectively.
+</figcaption>
+</figure>
+<h2 id="task-4.1-building-view-and-projection-matrices-for-a-cube-face">TASK 4.1: Building View and Projection Matrices for a Cube Face</h2>
+<h3 id="task-4.1.0-copy-from-your-last-homework">TASK 4.1.0 Copy from Your Last Homework</h3>
+<ol type="1">
+<li><p><code>../src/main.js</code>: Copy your construction of the camera’s view matrix (<code>world_to_cam</code> transformation matrix) from your solution to Task 2.2 of assignment 5. To implement our new translation gesture, please translate the view center by <code>cam_target</code> (this gesture may be helpful for inspecting the scene while debugging).</p></li>
+<li><p><code>../src/shaders/phong_shadow.{vert,frag}</code> : Copy your phong shading code code in preparation for adding the shadow test. The <code>uniform</code> and <code>varying</code> inputs for this shader have changed, so you will need to adapt your solution. We compute the normal for you, but you need to compute the light and view vectors yourself. Ignore Use the <code>light_color</code> as the diffuse and specular color of the light source. The diffuse and specular colors of the material are passed as <code>v2f_diffuse_color</code> and <code>v2f_specular_color</code>.</p></li>
+</ol>
+<hr />
+<h3 id="task-4.1.1-and-4.1.2-construct-transformation-matrix-for-show-mapping">TASK 4.1.1 and 4.1.2 Construct Transformation Matrix for Show Mapping</h3>
+<p>In <code>../src/light.js</code>, finish the <code>todo</code> items marked <code>4.1.1</code> and <code>4.1.2</code>. This is the most challenging part of this assignment: constructing the proper view and projection matrices for rendering the shadow maps on each face of the cube.</p>
+<p>Start by constructing the <code>camera_cube_projection</code> matrix in <code>src/light.js</code>. Note that the shadow map cube model assumes the light is positioned at the center of the cube. Given such a geometry, think of what aspect ratio and field of view properly define the light camera’s view frustum as visualized in Figure 1. The near/far parameters control the minimum and maximum distances at which you can compute shadow ray intersections. For this scene, you can use <span class="math inline">0.1</span> and <span class="math inline">100</span> respectively.</p>
+<p>Next, implement the <code>cube_camera_view</code> function to construct the view matrix for the light camera looking through side <code>side_idx</code> (in 0..5) of the shadow map cube. This the matrix representing the transformation from the world coordinate system to the coordinate system for the light camera.</p>
+<p>Note that the orientation of the shadow map cube itself (i.e., the shadow map cube coordinate system) must always be aligned with current eye coordinate system (see Figure 3 (a))! This will allow you sample the cube map texture directly with the light vectors calculated in your Phong shader (since your lighting calculation is done in eye space).</p>
+<p>Therefore, when setting up the <code>cube_camera_view</code> matrix, you will need to use the current eye’s view matrix (i.e. the transformation from the world coordinates system to the eye coordinate system) which is provided for you via the <code>scene_view</code> argument. You will also find the function <code>mat4.lookAt</code> helpful to point the camera through the specified cube face. See Figure 3 (b-d) for example light camera orientations. You should be able to figure out the correct <code>up</code> vector to specify for each cube face by studying Figure 2. You may find it easiest to construct this transformation as a composition of <code>scene_view</code> followed by a matrix that you construct with <code>mat4.lookAt</code>.</p>
+<p>Notice that we provide you with a visualization of the shadow map cube surrounding each light. After you’ve set up the view and projection matrices and before you move on to the fragment shaders, we recommend that you test your matrices by applying the preset scene (using the <code>c</code> key) and viewing the scene from the various cube faces. The view from the 0th cube face should match the following image:</p>
+<figure>
+<img src="../doc/ground_truth_false_shadowmap.png" alt="Expected output after finishing this step." style="width:50.0%" /><figcaption>Expected output after finishing this step.</figcaption>
+</figure>
+<p>Note that this is <em>not</em> yet visualizing a proper shadow map, but rather a dummy value that we provide for you to debug this stage before implementing Task <code>4.2.1</code>.</p>
+<h2 id="task-4.2-shaders-and-blend-options">TASK 4.2: Shaders and Blend Options</h2>
+<h3 id="task-4.2.1-light-depth-fragment-shader">TASK 4.2.1: Light Depth Fragment Shader</h3>
+<p>In <code>../src/shaders/shadowmap_gen.frag</code>, finish the todo item <code>4.2.1</code>, calculating the fragment distance.</p>
+<p>Note that the <code>shadowmap_gen</code> fragment shader should write the <strong>Euclidean distance</strong> to the fragment instead of its z (depth) coordinate.</p>
+<p>After completing this task, you can verify your implementation by pressing the <code>c</code> key and comparing with the ground-truth shadow maps:</p>
+<figure>
+<img src="../doc/ground_truth_post_shadowmap_gen.png" alt="Expected output after finishing this step." style="width:50.0%" /><figcaption>Expected output after finishing this step.</figcaption>
+</figure>
+<hr />
+<h3 id="task-4.2.2-phong-lighting-shader-with-shadows">TASK 4.2.2: Phong Lighting Shader with Shadows</h3>
+<p>In <code>../src/shaders/phong_shadow.frag</code>, finish the todo item <code>4.2.2</code>.</p>
+<p>Adapt your solution from the last assignment to implement Phong lighting and then use the <code>shadow_cubemap</code> shadow map to test whether the fragment is under shadow; your shader should only output a nonzero color if the light is visible from the fragment. You can use the GLSL function <code>textureCube</code> to sample the cube map texture using a vector.</p>
+<p>To simulate the attenuation of light emitted from a point source over distance, you should scale the light color by the inverse squared distance from the light to the fragment.</p>
+<hr />
+<h3 id="task-4.2.3-blend-options">TASK 4.2.3 Blend Options</h3>
+<p>In <code>../src/light.js</code>, finish the todo item <code>4.2.4</code>.</p>
+<p>We need each iteration of our loop over the lights to <strong>add</strong> to the current image, not overwrite it. This can be accomplished by enabling blending and appropriately configuring the blend function. You will want to change the <code>blend</code> field to look like:</p>
+<pre><code>        blend: {
+            enable: true,
+            func: {
+                src: sfactor,
+                dst: dfactor,
+            },
+        },</code></pre>
+<p>which corresponds to a call to the OpenGL function <code>glBlendFunc(sfactor, defactor)</code>. To determine the correct arguments to pass as <code>sfactor</code> and <code>dfactor</code>, please study the <a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml">OpenGL reference page</a> and think about how to make the blend operation <em>add</em> the source and destination values. You may also find it useful to read the <code>regl</code> documentation on blending <a href="http://regl.party/api#blending">here</a>.</p>
+<p>Now, with this last task finished, you should see the following result:</p>
+<figure>
+<img src="../doc/ground_truth_final.png" alt="Preset view on a correctly completed implementation." style="width:75.0%" /><figcaption>Preset view on a correctly completed implementation.</figcaption>
+</figure>
+<h2 id="what-to-submit">What to submit</h2>
+<p>A .zip compressed file named <code>ExerciseN-GroupG.zip</code>, where <em>N</em> is the number of the current exercise sheet, and <em>G</em> is the number of your group. It should contain:</p>
+<ul>
+<li>The files you changed.</li>
+<li>A couple of screenshots clearly showing that you can render the proper shadows from multiple viewpoints.</li>
+<li>A <code>readme.txt</code> file containing a description of how you solved each part of the exercise (use the same numbers and titles) and whatever problems you encountered. <em>Indicate what fraction of the total workload each project member contributed.</em></li>
+</ul>
+<p>Submit solutions to Moodle before the deadline. Late submissions receive 0 points!</p>
+<div class="box grade">
+
+<h3 id="grading">Grading</h3>
+<ul>
+<li>20%: Building the projection matrix for rendering the shadow maps</li>
+<li>30%: Building the view matrix for each face of the shadow cube map</li>
+<li>10%: Setting the blending mode so that each diffuse/specular lighting pass <strong>adds</strong> to the output color.</li>
+<li>10%: Completing <code>../shadow/shadowmap_gen.frag</code> to draw the distance map for a light</li>
+<li>30%: Completing <code>../shadow/phong_shadow.frag</code> to render the attenuated diffuse and specular contributions to unshaded fragments only.</li>
+</ul>
+
+</body> 
