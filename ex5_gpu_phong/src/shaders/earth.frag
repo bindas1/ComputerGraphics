@@ -58,7 +58,15 @@ void main()
     vec3 m_night = texture2D(texture_surface_night, v2f_tex_coord).rgb;
     vec3 Il_times_m_night = vec3(light_color.r * m_night.r, light_color.g * m_night.g, light_color.b * m_night.b);
 
-    vec3 diffuse_light = mix(Il_times_m_night, Il_times_m_day, dotNL);
+    //cloud day
+    vec3 m_cloud = texture2D(texture_clouds, v2f_tex_coord).rgb;
+    vec3 Il_times_m_cloud = vec3(light_color.r * m_cloud.r, light_color.g * m_cloud.g, light_color.b * m_cloud.b);
+    float gloss = texture2D(texture_gloss, v2f_tex_coord)[0];
+
+    vec3 new_Il_times_m_day = mix(Il_times_m_day, Il_times_m_cloud, m_cloud[0]);
+
+    //lin interpolation
+    vec3 diffuse_light = mix(Il_times_m_night, new_Il_times_m_day, dotNL);
 
     vec3 intens = ambient_light + diffuse_light;
 
@@ -73,6 +81,13 @@ void main()
         vec3 specular_light_after_clouds = mix(vec3(0,0,0), specular_light, clouds) * gloss;
         intens += specular_light_after_clouds;
     }
+
+    // // clouds diffuse
+    // vec3 m_cloud_night = texture2D(texture_clouds, v2f_tex_coord).rgb;
+    // vec3 Il_times_m_night = vec3(light_color.r * m_night.r, light_color.g * m_night.g, light_color.b * m_night.b);
+
+
+
 
 	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range
 
