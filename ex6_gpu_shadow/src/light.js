@@ -13,7 +13,7 @@ function init_light(regl, resources) {
 		colorFormat: 'rgba',
 		colorType:   'uint8',
 		mag: 'linear',
-		min: 'linear', 
+		min: 'linear',
 		faces: [0, 1, 2, 3, 4, 5].map(side_idx => resources[`tex_cube_side_${side_idx}`]),
 	});
 
@@ -140,7 +140,19 @@ function init_light(regl, resources) {
 		please use the function perspective, see https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl
 		Note: this is the same for all point lights/cube faces!
 	*/
-	const cube_camera_projection = mat4.create(); // please use mat4.perspective(mat4.create(), fovy, aspect, near, far);
+
+	// Note that the shadow map cube model assumes the light is positioned at the center of the cube.
+	// Given such a geometry, think of what aspect ratio and field of view properly define
+	// the light camera’s view frustum as visualized in Figure 1. The near/far parameters control the minimum and
+	// maximum distances at which you can compute shadow ray intersections. For this scene, you can use 0.1
+	// and 100 respectively.
+
+	//mat4.perspective(mat4.create(), fovy, aspect, near, far)
+	let fovy = Math.pi;
+	let aspect = 1;
+	let near = 0.1;
+	let far = 100;
+	const cube_camera_projection = mat4.perspective(mat4.create(), fovy, aspect, near, far);
 
 	class Light {
 		constructor({position, color, intensity, update} = {color: [1., 0.5, 0.], intensity: 5, update: null}) {
@@ -165,8 +177,41 @@ function init_light(regl, resources) {
 				So when `side_idx = 0`, we should return the +x camera matrix,
 				and when `side_idx = 5`, we should return the -z one.
 			 */
+			var dict = {
+				0: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[1, 0, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				1: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[-1, 0, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				2: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 1, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				3: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, -1, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				4: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 0, 1], // view target point
+						[0, 0, 1], // up vector
+				),
+				5: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 0, -1], // view target point
+						[0, 0, 1], // up vector
+				)
+			}
 
-			return mat4.create();
+			let good_side = dict[side_idx];
+			return mat4_matmul_many(mat4.create(), good_side, scene_view)
 		}
 
 		get_cube_camera_projection() {
@@ -257,4 +302,3 @@ function init_light(regl, resources) {
 
 	return Light;
 }
-
