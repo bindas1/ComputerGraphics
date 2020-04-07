@@ -74,7 +74,12 @@ function init_light(regl, resources) {
 		    change the blend options
 		*/
 		blend: {
-		},
+            /*enable: true,
+            func: {
+                src: sfactor,
+                dst: dfactor,
+            },*/
+        },
 
 		depth: {
 			enable: true,
@@ -140,7 +145,11 @@ function init_light(regl, resources) {
 		please use the function perspective, see https://stackoverflow.com/questions/28286057/trying-to-understand-the-math-behind-the-perspective-matrix-in-webgl
 		Note: this is the same for all point lights/cube faces!
 	*/
-	const cube_camera_projection = mat4.create(); // please use mat4.perspective(mat4.create(), fovy, aspect, near, far);
+	let fovy = Math.PI /2
+	let aspect = 1.
+	let near = 0.1
+	let far = 100
+	const cube_camera_projection = mat4.perspective(mat4.create(), fovy, aspect, near, far);
 
 	class Light {
 		constructor({position, color, intensity, update} = {color: [1., 0.5, 0.], intensity: 5, update: null}) {
@@ -166,7 +175,41 @@ function init_light(regl, resources) {
 				and when `side_idx = 5`, we should return the -z one.
 			 */
 
-			return mat4.create();
+				var dict = {
+				0: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[1, 0, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				1: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[-1, 0, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				2: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 1, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				3: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, -1, 0], // view target point
+						[0, 0, 1], // up vector
+				),
+				4: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 0, 1], // view target point
+						[0, 0, 1], // up vector
+				),
+				5: mat4.lookAt(mat4.create(),
+						[0, 0, 0], // camera position in world coord
+						[0, 0, -1], // view target point
+						[0, 0, 1], // up vector
+				)
+			}
+
+			let good_side = dict[side_idx];
+			return mat4_matmul_many(mat4.create(), good_side, scene_view)
 		}
 
 		get_cube_camera_projection() {
