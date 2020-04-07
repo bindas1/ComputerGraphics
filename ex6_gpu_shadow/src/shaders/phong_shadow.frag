@@ -44,24 +44,22 @@ void main() {
     * distance from the shadow map.
     ***/
 
-    // //ambient light  = Ia * ma = ambient * Il * ma
-    // vec3 ma_md_ms = samplerCube(shadow_cubemap, v2f_tex_coord).rgb; //ma md or ms. vec 3 cuz for rgb
-    // vec3 Il_times_ma_md_ms = vec3(light_color.r * ma_md_ms.r, light_color.g * ma_md_ms.g, light_color.b * ma_md_ms.b);
+    vec3 vLight = normalize(vec3(light_position) - v2f_position_view);
+    float dotNL = dot(vLight,N);
 
-    // vec3 ambient_light = ambient * Il_times_ma_md_ms;
+    vec3 r = 2.0 * dotNL * N - vLight;
+    vec3 v = -normalize(v2f_position_view);
 
-    // vec3 vLight = normalize(v2f_dir_to_light);
-    // float dotNL = dot(normalize(v2f_normal), vLight);
-    // vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
-    // vec3 v = normalize(v2f_dir_from_view);
-    // vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
+    float fragDist = length(light_position - v2f_position_view);
+    float lightRayDist = textureCube(shadow_cubemap, -vLight).r;
 
-    // vec3 intens = ambient_light + diffuse_light;
+    if (fragDist < 1.01 * lightRayDist) {
+        if (dotNL > 0.0)
+            color += light_color * v2f_diffuse_color * dotNL;
+        if (dot(v, r) > 0.0)
+            color += light_color * v2f_specular_color * pow(dot(r,v), shininess);
+    }
 
-    // if (dot(r,v) > 0.0) {
-    //     vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_ma_md_ms;
-    //     intens += specular_light;
-    // }
-
-    gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range
+    float inverseSquare = 1.0/(fragDist * fragDist);
+    gl_FragColor = vec4(color * inverseSquare, 1.0);
 }

@@ -74,7 +74,12 @@ function init_light(regl, resources) {
 		    change the blend options
 		*/
 		blend: {
-		},
+            enable: true,
+            func: {
+                src: 1,
+                dst: 1,
+            },
+        },
 
 		depth: {
 			enable: true,
@@ -147,11 +152,10 @@ function init_light(regl, resources) {
 	// maximum distances at which you can compute shadow ray intersections. For this scene, you can use 0.1
 	// and 100 respectively.
 
-	//mat4.perspective(mat4.create(), fovy, aspect, near, far)
-	let fovy = Math.pi;
-	let aspect = 1;
-	let near = 0.1;
-	let far = 100;
+	let fovy = Math.PI /2
+	let aspect = 1.
+	let near = 0.1
+	let far = 100
 	const cube_camera_projection = mat4.perspective(mat4.create(), fovy, aspect, near, far);
 
 	class Light {
@@ -178,40 +182,45 @@ function init_light(regl, resources) {
 				and when `side_idx = 5`, we should return the -z one.
 			 */
 			var dict = {
-				0: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[1, 0, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				1: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[-1, 0, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				2: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 1, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				3: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, -1, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				4: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 0, 1], // view target point
-						[0, 0, 1], // up vector
-				),
-				5: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 0, -1], // view target point
-						[0, 0, 1], // up vector
-				)
-			}
+							0: {
+								"target" : [1, 0, 0], // view target point
+								"up": [0, 1, 0], // up vector
+							},
+							1: {
+								"target" : [-1, 0, 0], // view target point
+								"up": [0, 1, 0], // up vector
+							},
+							2: {
+								"target" : [0, 1, 0], // view target point
+								"up": [0, 0, -1], // up vector
+							},
+							3: {
+								"target" : [0, -1, 0], // view target point
+								"up": [0, 0, 1], // up vector
+							},
+							4: {
+								"target" : [0, 0, 1], // view target point
+								"up": [0, 1, 0], // up vector
+							},
+							5: {
+								"target" : [0, 0, -1], // view target point
+								"up": [0, 1, 0], // up vector
+							},
+						}
 
-			let good_side = dict[side_idx];
-			return mat4_matmul_many(mat4.create(), good_side, scene_view)
+			let good_info = dict[side_idx];
+
+			const position_after_transform = vec3FromVec4(vec4.transformMat4(vec4.create(), vec4FromVec3(this.position, 1.0), scene_view))
+			let target_after_transform = vec3.add(vec3.create(), position_after_transform, good_info["target"])
+
+			let look_at = mat4.lookAt(
+				mat4.create(),
+				position_after_transform, // camera position in world coord
+				target_after_transform, // view target point
+				good_info["up"], // up vector
+			);
+
+			return mat4_matmul_many(mat4.create(), look_at, scene_view)
 		}
 
 		get_cube_camera_projection() {
