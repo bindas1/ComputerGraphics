@@ -26,12 +26,11 @@ void main() {
 	of this shader (v2f_position_view and v2f_normal) and the gl_Position.
     */
 	// viewing vector (from camera to vertex in view coordinates), camera is at vec3(0, 0, 0) in cam coords
-	v2f_position_view = vec3(1, 0, 0); // TODO calculate
+	v2f_position_view = mat_normals * position;//v
 	// transform normal to camera coordinates
-	v2f_normal = normal; // TODO apply normal transformation
-	gl_Position = vec4(0., 0., 0., 1.); // TODO apply mvp matrix to position
+	v2f_normal = mat_normals * normal; //n
+	gl_Position =  mat_mvp * vec4(position, 1); // TODO apply mvp matrix to position
 
 	v2f_diffuse_color = diffuse_color;
 	v2f_specular_color = specular_color;
 }
-

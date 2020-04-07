@@ -44,6 +44,24 @@ void main() {
     * distance from the shadow map.
     ***/
 
+    // //ambient light  = Ia * ma = ambient * Il * ma
+    // vec3 ma_md_ms = samplerCube(shadow_cubemap, v2f_tex_coord).rgb; //ma md or ms. vec 3 cuz for rgb
+    // vec3 Il_times_ma_md_ms = vec3(light_color.r * ma_md_ms.r, light_color.g * ma_md_ms.g, light_color.b * ma_md_ms.b);
+
+    // vec3 ambient_light = ambient * Il_times_ma_md_ms;
+
+    // vec3 vLight = normalize(v2f_dir_to_light);
+    // float dotNL = dot(normalize(v2f_normal), vLight);
+    // vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
+    // vec3 v = normalize(v2f_dir_from_view);
+    // vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
+
+    // vec3 intens = ambient_light + diffuse_light;
+
+    // if (dot(r,v) > 0.0) {
+    //     vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_ma_md_ms;
+    //     intens += specular_light;
+    // }
+
     gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range
 }
-

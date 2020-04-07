@@ -55,7 +55,7 @@ async function main() {
 		'shader_ambient_frag':      load_text('./src/shaders/ambient_color.frag'),
 		'shader_phong_shadow_vert': load_text('./src/shaders/phong_shadow.vert'),
 		'shader_phong_shadow_frag': load_text('./src/shaders/phong_shadow.frag'),
-		
+
 		'shader_viscube_vert': load_text('./src/shaders/cubemap_visualization_cube.vert'),
 		'shader_viscube_frag': load_text('./src/shaders/cubemap_visualization_cube.frag'),
 
@@ -97,26 +97,44 @@ async function main() {
 	let cam_target = [0, 0, 0];
 
 	function update_cam_transform() {
-		/* TODO 4.1.0
-		* Copy your solution to Task 2.2 of assignment 5.
-		Calculate the world-to-camera transformation matrix.
-		The camera orbits the scene
-		* cam_distance_base * cam_distance_factor = distance of the camera from the (0, 0, 0) point
-		* cam_angle_z - camera ray's angle around the Z axis
-		* cam_angle_y - camera ray's angle around the Y axis
+		// /* TODO 4.1.0
+		// * Copy your solution to Task 2.2 of assignment 5.
+		// Calculate the world-to-camera transformation matrix.
+		// The camera orbits the scene
+		// * cam_distance_base * cam_distance_factor = distance of the camera from the (0, 0, 0) point
+		// * cam_angle_z - camera ray's angle around the Z axis
+		// * cam_angle_y - camera ray's angle around the Y axis
 
-		* cam_target - the point we orbit around
-		*/
+		// * cam_target - the point we orbit around
+		// */
+
+		// // Example camera matrix, looking along forward-X, edit this
+		// const look_at = mat4.lookAt(mat4.create(),
+		// 	[-5, 0, 0], // camera position in world coord
+		// 	[0, 0, 0], // view target point
+		// 	[0, 0, 1], // up vector
+		// );
+		// // Store the combined transform in mat_world_to_cam
+		// // mat_world_to_cam = A * B * ...
+		// mat4_matmul_many(mat_world_to_cam, look_at); // edit this
+
+		let r = cam_distance_base * cam_distance_factor
+
+		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
+		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
+		let mat_trans = mat4.fromTranslation(mat4.create(), [r, 0, 0] )
 
 		// Example camera matrix, looking along forward-X, edit this
 		const look_at = mat4.lookAt(mat4.create(),
-			[-5, 0, 0], // camera position in world coord
+			[-1, 0, 0], // camera position in world coord
 			[0, 0, 0], // view target point
 			[0, 0, 1], // up vector
 		);
+
 		// Store the combined transform in mat_world_to_cam
 		// mat_world_to_cam = A * B * ...
-		mat4_matmul_many(mat_world_to_cam, look_at); // edit this
+		mat4_matmul_many(mat_world_to_cam, look_at, mat_trans, mat_rotY, mat_rotZ); // edit this
+
 	}
 
 	update_cam_transform();
@@ -227,7 +245,7 @@ async function main() {
 			}
 
 			register_keyboard_action(display_text, handler);
-			
+
 			const entry = document.createElement('span');
 			entry.classList.add('button');
 			entry.classList.add('keyboard');
@@ -248,7 +266,7 @@ async function main() {
 		cam_distance_factor = 0.8;
 		cam_target = [0, 0, 0];
 		stop_vis_cube();
-		
+
 		update_cam_transform();
 	}
 	document.getElementById('btn-preset-view').addEventListener('click', activate_preset_view);
@@ -326,4 +344,3 @@ async function main() {
 }
 
 DOM_loaded_promise.then(main);
-
