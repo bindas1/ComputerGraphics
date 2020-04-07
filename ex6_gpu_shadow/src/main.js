@@ -123,17 +123,18 @@ async function main() {
 		let mat_rotY = mat4.fromYRotation(mat4.create(), cam_angle_y)
 		let mat_rotZ = mat4.fromZRotation(mat4.create(), cam_angle_z)
 		let mat_trans = mat4.fromTranslation(mat4.create(), [r, 0, 0] )
+		let mat_trans_target = mat4.fromTranslation(mat4.create(), cam_target )
 
 		// Example camera matrix, looking along forward-X, edit this
 		const look_at = mat4.lookAt(mat4.create(),
 			[-1, 0, 0], // camera position in world coord
-			[0, 0, 0], // view target point
+			cam_target, // view target point
 			[0, 0, 1], // up vector
 		);
 
 		// Store the combined transform in mat_world_to_cam
 		// mat_world_to_cam = A * B * ...
-		mat4_matmul_many(mat_world_to_cam, look_at, mat_trans, mat_rotY, mat_rotZ); // edit this
+		mat4_matmul_many(mat_world_to_cam, look_at, mat_trans_target, mat_trans, mat_rotY, mat_rotZ); // edit this
 
 	}
 
