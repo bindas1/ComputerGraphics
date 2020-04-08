@@ -44,6 +44,23 @@ void main() {
     * distance from the shadow map.
     ***/
 
-    gl_FragColor = vec4(color, 0.); // output: RGBA in 0..1 range
+    vec3 vLight = normalize(vec3(light_position) - v2f_position_view);
+    float dotNL = dot(vLight,N);
+
+    vec3 r = 2.0 * dotNL * N - vLight;
+    vec3 v = -normalize(v2f_position_view);
+
+    float fragDist = length(light_position - v2f_position_view);
+    float lightRayDist = textureCube(shadow_cubemap, -vLight).r;
+
+    if (fragDist < 1.01 * lightRayDist) {
+        if (dotNL > 0.0)
+            color += light_color * v2f_diffuse_color * dotNL;
+        if (dot(v, r) > 0.0)
+            color += light_color * v2f_specular_color * pow(dot(r,v), shininess);
+    }
+
+    float inverseSquare = 1.0/(lightRayDist * lightRayDist);
+    gl_FragColor = vec4(color * inverseSquare, 1.0);
 }
 

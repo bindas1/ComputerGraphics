@@ -74,11 +74,11 @@ function init_light(regl, resources) {
 		    change the blend options
 		*/
 		blend: {
-            /*enable: true,
+            enable: true,
             func: {
-                src: sfactor,
-                dst: dfactor,
-            },*/
+                src: 1,
+                dst: 1,
+            },
         },
 
 		depth: {
