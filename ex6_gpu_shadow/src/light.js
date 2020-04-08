@@ -183,31 +183,32 @@ function init_light(regl, resources) {
 			 */
 
 			var dict = {
-							0: {
-								"target" : [1, 0, 0], // view target point
-								"up": [0, 1, 0], // up vector
-							},
-							1: {
-								"target" : [-1, 0, 0], // view target point
-								"up": [0, 1, 0], // up vector
-							},
-							2: {
-								"target" : [0, 1, 0], // view target point
-								"up": [0, 0, -1], // up vector
-							},
-							3: {
-								"target" : [0, -1, 0], // view target point
-								"up": [0, 0, 1], // up vector
-							},
-							4: {
-								"target" : [0, 0, 1], // view target point
-								"up": [0, 1, 0], // up vector
-							},
-							5: {
-								"target" : [0, 0, -1], // view target point
-								"up": [0, 1, 0], // up vector
-							},
-						}
+
+						0: {
+							"target" : [1, 0, 0], // view target point
+							"up": [0, 1, 0], // up vector
+						},
+						1: {
+							"target" : [-1, 0, 0], // view target point
+							"up": [0, 1, 0], // up vector
+						},
+						2: {
+							"target" : [0, 1, 0], // view target point
+							"up": [0, 0, -1], // up vector
+						},
+						3: {
+							"target" : [0, -1, 0], // view target point
+							"up": [0, 0, 1], // up vector
+						},
+						4: {
+							"target" : [0, 0, 1], // view target point
+							"up": [0, 1, 0], // up vector
+						},
+						5: {
+							"target" : [0, 0, -1], // view target point
+							"up": [0, 1, 0], // up vector
+						},
+					}
 
 			let good_info = dict[side_idx];
 
