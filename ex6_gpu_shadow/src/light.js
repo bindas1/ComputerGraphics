@@ -176,37 +176,37 @@ function init_light(regl, resources) {
 			 */
 
 				var dict = {
-				0: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[1, 0, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				1: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[-1, 0, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				2: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 1, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				3: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, -1, 0], // view target point
-						[0, 0, 1], // up vector
-				),
-				4: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 0, 1], // view target point
-						[0, 0, 1], // up vector
-				),
-				5: mat4.lookAt(mat4.create(),
-						[0, 0, 0], // camera position in world coord
-						[0, 0, -1], // view target point
-						[0, 0, 1], // up vector
-				)
-			}
+                0: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [1, 0, 0], // view target point
+                        [0, 1, 0], // up vector
+                ),
+                1: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [-1, 0, 0], // view target point
+                        [0, 1, 0], // up vector
+                ),
+                2: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [0, 1, 0], // view target point
+                        [0, 0, -1], // up vector
+                ),
+                3: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [0, -1, 0], // view target point
+                        [0, 0, 1], // up vector
+                ),
+                4: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [0, 0, 1], // view target point
+                        [0, 1, 0], // up vector
+                ),
+                5: mat4.lookAt(mat4.create(),
+                        [0, 0, 0], // camera position in world coord
+                        [0, 0, -1], // view target point
+                        [0, 1, 0], // up vector
+                )
+            }
 
 			let good_side = dict[side_idx];
 			return mat4_matmul_many(mat4.create(), good_side, scene_view)
