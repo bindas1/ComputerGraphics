@@ -181,6 +181,7 @@ function init_light(regl, resources) {
 				So when `side_idx = 0`, we should return the +x camera matrix,
 				and when `side_idx = 5`, we should return the -z one.
 			 */
+
 			var dict = {
 							0: {
 								"target" : [1, 0, 0], // view target point
