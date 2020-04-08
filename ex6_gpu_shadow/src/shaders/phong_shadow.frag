@@ -60,6 +60,6 @@ void main() {
             color += light_color * v2f_specular_color * pow(dot(r,v), shininess);
     }
 
-    float inverseSquare = 1.0/(lightRayDist * lightRayDist);
+    float inverseSquare = 1.0/(fragDist * fragDist);
     gl_FragColor = vec4(color * inverseSquare, 1.0);
 }
