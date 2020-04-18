@@ -247,7 +247,7 @@ vec3 tex_map(vec2 point) {
 	if(noise_val < terrain_water_level) {
 		return terrain_color_water;
 	} 
-	
+
 	return mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
 }
 
@@ -279,5 +279,7 @@ vec3 tex_marble(vec2 point) {
 	Implement your marble texture evaluation routine as described in the handout.
 	You will need to use your 2d fbm routine and the marble color constants described above.
 	*/
-	return vec3(0.);
+	vec2 q = vec2(perlin_fbm(point), perlin_fbm(vec2(point.x + 1.7, point.y + 4.6)));
+	float alpha = 0.5*(1. + perlin_fbm(vec2(point.x + 4. * q.x, point.y + 4. * q.y)));
+	return mix(brown_dark, brown_light, alpha);
 }
