@@ -243,7 +243,12 @@ vec3 tex_map(vec2 point) {
 	Implement your map texture evaluation routine as described in the handout.
 	You will need to use your perlin_fbm routine and the terrain color constants described above.
 	*/
-	return vec3(0.);
+	float noise_val = perlin_fbm(point);
+	if(noise_val < terrain_water_level) {
+		return terrain_color_water;
+	} 
+	
+	return mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
 }
 
 // ==============================================================
@@ -257,7 +262,12 @@ vec3 tex_wood(vec2 point) {
 	Implement your wood texture evaluation routine as described in thE handout.
 	You will need to use your 2d turbulence routine and the wood color constants described above.
 	*/
-	return vec3(0.);
+	float noise_val = perlin_fbm(point);
+	if(noise_val < terrain_water_level) {
+		return terrain_color_water;
+	} 
+	
+	return mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
 }
 
 
