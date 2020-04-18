@@ -181,11 +181,17 @@ vec3 tex_perlin(vec2 point) {
 // 2D Fractional Brownian Motion
 
 float perlin_fbm(vec2 point) {
-	/* TODO 4.2
-	Implement 2D fBm as described in the handout. Like in the 1D case, you
-	should use the constants num_octaves, freq_multiplier, and ampl_multiplier.
-	*/
-	return 0.;
+    /* TODO 4.2
+    Implement 2D fBm as described in the handout. Like in the 1D case, you
+    should use the constants num_octaves, freq_multiplier, and ampl_multiplier.
+    */
+    float fbm = 0.0;
+    for(int i = 0; i < num_octaves; i++) {
+        float w1i = pow(freq_multiplier, float(i));
+        fbm += pow(ampl_multiplier, float(i)) * perlin_noise(vec2(point.x * w1i, point.y * w1i));
+    }
+
+    return fbm;
 }
 
 vec3 tex_fbm(vec2 point) {
@@ -205,11 +211,17 @@ vec3 tex_fbm_for_terrain(vec2 point) {
 // 2D turbulence
 
 float turbulence(vec2 point) {
-	/* TODO 4.3
-	Implement the 2D turbulence function as described in the handout.
-	Again, you should use num_octaves, freq_multiplier, and ampl_multiplier.
-	*/
-	return 0.;
+    /* TODO 4.3
+    Implement the 2D turbulence function as described in the handout.
+    Again, you should use num_octaves, freq_multiplier, and ampl_multiplier.
+    */
+    float fbm = 0.0;
+    for(int i = 0; i < num_octaves; i++) {
+        float w1i = pow(freq_multiplier, float(i));
+        fbm += pow(ampl_multiplier, float(i)) * abs(perlin_noise(vec2(point.x * w1i, point.y * w1i)));
+    }
+
+    return fbm;
 }
 
 vec3 tex_turbulence(vec2 point) {
