@@ -147,7 +147,27 @@ float perlin_noise(vec2 point) {
 	Implement 2D perlin noise as described in the handout.
 	You may find a glsl `for` loop useful here, but it's not necessary.
 	*/
-	return 0.;
+    
+    vec2 c0 = vec2(floor(point.x), floor(point.y));
+    vec2 c1 = vec2(c0.x, c0.y + 1.);
+    vec2 c2 = vec2(c0.x + 1., c0.y);
+    vec2 c3 = vec2(c0.x + 1., c0.y + 1.);
+
+    vec2 g0 = gradients(hash_func(c0));
+    vec2 g1 = gradients(hash_func(c1));
+    vec2 g2 = gradients(hash_func(c2));
+    vec2 g3 = gradients(hash_func(c3));
+
+    float phi_0 = dot(g0, (point - c0));
+    float phi_1 = dot(g1, (point - c1));
+    float phi_2 = dot(g2, (point - c2));
+    float phi_3 = dot(g3, (point - c3));
+
+    vec2 t = point - c0;
+    float res1 = mix(phi_0, phi_2, blending_weight_poly(t.x));
+    float res2 = mix(phi_1, phi_3, blending_weight_poly(t.x));
+    return mix(res1, res2, blending_weight_poly(t.y));
+    
 }
 
 vec3 tex_perlin(vec2 point) {
