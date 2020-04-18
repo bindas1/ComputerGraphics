@@ -1,6 +1,6 @@
 precision highp float;
 
-// varying vec2 v2f_tex_coord;
+varying vec2 v2f_tex_coord;
 varying vec3 v2f_normal; // normal vector in camera coordinates
 varying vec3 v2f_dir_to_light; // direction to light source
 varying vec3 v2f_dir_from_view; // viewing vector (from eye to vertex in view coordinates)
@@ -37,8 +37,22 @@ void main()
     	`material_color should be used as material parameter for ambient, diffuse and specular lighting.
     	Hints:
 	*/
-	//ambient light  = Ia * ma = ambient * Il * ma
-    vec3 ma_md_ms = texture2D(texture_base_color, v2f_tex_coord).rgb; //ma md or ms. vec 3 cuz for rgb
+
+	/* TODO 5.1.1
+	Implement your map texture evaluation routine as described in the handout.
+	You will need to use your perlin_fbm routine and the terrain color constants described above.
+	*/
+	//float noise_val = perlin_fbm(point);
+	float noise_val = height;
+	if(noise_val < terrain_water_level) {
+		material_color = terrain_color_water;
+		shininess = 8.0;
+	} else {
+		material_color = mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
+	}
+
+	/*//ambient light  = Ia * ma = ambient * Il * ma
+    vec3 ma_md_ms = material_color;
     vec3 Il_times_ma_md_ms = vec3(light_color.r * ma_md_ms.r, light_color.g * ma_md_ms.g, light_color.b * ma_md_ms.b);
 
     vec3 ambient_light = ambient * Il_times_ma_md_ms;
@@ -56,9 +70,9 @@ void main()
         intens += specular_light;
     }
 
-	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range
+	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range*/
 
-	/*vec3 color = material_color * light_color;
-	gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range*/
+	vec3 color = material_color * light_color;
+	gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range
 }
 
