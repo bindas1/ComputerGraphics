@@ -89,7 +89,12 @@ float perlin_fbm_1d(float x) {
 
 	Note: the GLSL `for` loop may be useful.
 	*/
-	return 0.;
+	float fbm = 0.0;
+	for(int i = 0; i < num_octaves; i++) {
+		fbm += pow(ampl_multiplier, float(i)) * perlin_noise_1d(x * pow(freq_multiplier, float(i)));
+	}
+
+	return fbm;
 }
 
 // ----- plotting -----
