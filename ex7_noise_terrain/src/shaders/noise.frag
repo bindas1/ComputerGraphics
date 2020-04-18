@@ -262,12 +262,10 @@ vec3 tex_wood(vec2 point) {
 	Implement your wood texture evaluation routine as described in thE handout.
 	You will need to use your 2d turbulence routine and the wood color constants described above.
 	*/
-	float noise_val = perlin_fbm(point);
-	if(noise_val < terrain_water_level) {
-		return terrain_color_water;
-	} 
-	
-	return mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
+
+	float n_p = length(point);
+	float alpha = 0.5*(1. + sin(100.*(abs(n_p) + 0.15 * turbulence(point))));
+	return mix(brown_dark, brown_light, alpha);
 }
 
 
