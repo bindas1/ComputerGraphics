@@ -126,6 +126,7 @@ async function main() {
 			[0, 0, 0], // view target point
 			[0, 0, 1], // up vector
 		);
+		mat4_matmul_many(mat_world_to_cam, look_at, mat_trans, mat_rotY, mat_rotZ);
 	}
 
 	update_cam_transform();

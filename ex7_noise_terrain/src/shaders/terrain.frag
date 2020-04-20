@@ -43,7 +43,8 @@ void main()
 	You will need to use your perlin_fbm routine and the terrain color constants described above.
 	*/
 	//float noise_val = perlin_fbm(point);
-	float noise_val = height;
+	//float noise_val = perlin_fbm(v2f_tex_coord);
+	float noise_val = 1.;
 	if(noise_val < terrain_water_level) {
 		material_color = terrain_color_water;
 		shininess = 8.0;
@@ -51,7 +52,7 @@ void main()
 		material_color = mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
 	}
 
-	/*//ambient light  = Ia * ma = ambient * Il * ma
+	//ambient light  = Ia * ma = ambient * Il * ma
     vec3 ma_md_ms = material_color;
     vec3 Il_times_ma_md_ms = vec3(light_color.r * ma_md_ms.r, light_color.g * ma_md_ms.g, light_color.b * ma_md_ms.b);
 
@@ -70,9 +71,9 @@ void main()
         intens += specular_light;
     }
 
-	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range*/
+	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range
 
-	vec3 color = material_color * light_color;
-	gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range
+	/*vec3 color = material_color * light_color;
+	gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range*/
 }
 
