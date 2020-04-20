@@ -44,7 +44,7 @@ void main()
 	*/
 	//float noise_val = perlin_fbm(point);
 	//float noise_val = perlin_fbm(v2f_tex_coord);
-	float noise_val = 1.;
+	float noise_val = height;
 	if(noise_val < terrain_water_level) {
 		material_color = terrain_color_water;
 		shininess = 8.0;

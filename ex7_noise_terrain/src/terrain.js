@@ -67,8 +67,8 @@ function terrain_build_mesh(height_map) {
 				normals[idx] = [0, 0, 1];
 			}
 			//need to distribute gx,gy between [-0.5,0.5] i think unfortunately this doesnt seem to work ;(
-			//vertices[idx] = [gx/grid_width-0.5 ,gy/grid_height-0.5, elevation];
-			vertices[idx] = [gx ,gy, elevation];
+			vertices[idx] = [gx/grid_width-0.5 ,gy/grid_height-0.5, elevation];
+			//vertices[idx] = [gx ,gy, elevation];
 		}
 	}
 
@@ -78,16 +78,13 @@ function terrain_build_mesh(height_map) {
 			Triangulate the grid cell whose lower lefthand corner is grid index (gx, gy).
 			You will need to create two triangles to fill each square.
 			*/
-
 			// faces.push([v1, v2, v3]); // adds a triangle on vertex indices v1, v2, v3
 			const idx1 = xy_to_v_index(gx, gy);
 			const idx2 = xy_to_v_index(gx+1, gy);
 			const idx3 = xy_to_v_index(gx, gy+1);
 			const idx4 = xy_to_v_index(gx+1, gy+1);
-			faces.push(vertices[idx1], vertices[idx2], vertices[idx3]);
-			faces.push(vertices[idx2], vertices[idx4], vertices[idx3]);
-			
-			
+			faces.push([idx1, idx2, idx3]);
+			faces.push([idx2, idx4, idx3]);
 		}
 	}
 
