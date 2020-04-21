@@ -147,7 +147,7 @@ float perlin_noise(vec2 point) {
 	Implement 2D perlin noise as described in the handout.
 	You may find a glsl `for` loop useful here, but it's not necessary.
 	*/
-    
+
     vec2 c0 = vec2(floor(point.x), floor(point.y));
     vec2 c1 = vec2(c0.x, c0.y + 1.);
     vec2 c2 = vec2(c0.x + 1., c0.y);
@@ -167,7 +167,7 @@ float perlin_noise(vec2 point) {
     float res1 = mix(phi_0, phi_2, blending_weight_poly(t.x));
     float res2 = mix(phi_1, phi_3, blending_weight_poly(t.x));
     return mix(res1, res2, blending_weight_poly(t.y));
-    
+
 }
 
 vec3 tex_perlin(vec2 point) {
@@ -246,7 +246,7 @@ vec3 tex_map(vec2 point) {
 	float noise_val = perlin_fbm(point);
 	if(noise_val < terrain_water_level) {
 		return terrain_color_water;
-	} 
+	}
 
 	return mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
 }

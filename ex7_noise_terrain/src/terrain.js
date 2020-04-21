@@ -54,7 +54,7 @@ function terrain_build_mesh(height_map) {
 			]);
 
 			/* TODO 6.1
-			Generate the displaced terrain vertex corresponding to integer grid location (gx, gy). 
+			Generate the displaced terrain vertex corresponding to integer grid location (gx, gy).
 			The height (Z coordinate) of this vertex is determined by height_map.
 			If the point falls below WATER_LEVEL:
 			* it should be clamped back to WATER_LEVEL.
@@ -84,7 +84,7 @@ function terrain_build_mesh(height_map) {
 			const idx3 = xy_to_v_index(gx, gy+1);
 			const idx4 = xy_to_v_index(gx+1, gy+1);
 			faces.push([idx1, idx2, idx3]);
-			faces.push([idx2, idx4, idx3]);
+			faces.push([idx2, idx3, idx4]);
 		}
 	}
 
@@ -130,16 +130,16 @@ function init_terrain(regl, resources, height_map_buffer) {
 		draw({mat_projection, mat_view, light_position_cam}) {
 			mat4_matmul_many(this.mat_model_view, mat_view, this.mat_model_to_world);
 			mat4_matmul_many(this.mat_mvp, mat_projection, this.mat_model_view);
-	
+
 			mat3.fromMat4(this.mat_normals, this.mat_model_view);
 			mat3.transpose(this.mat_normals, this.mat_normals);
 			mat3.invert(this.mat_normals, this.mat_normals);
-	
+
 			pipeline_draw_terrain({
 				mat_mvp: this.mat_mvp,
 				mat_model_view: this.mat_model_view,
 				mat_normals: this.mat_normals,
-		
+
 				light_position: light_position_cam,
 			});
 		}
@@ -147,4 +147,3 @@ function init_terrain(regl, resources, height_map_buffer) {
 
 	return new TerrainActor();
 }
-

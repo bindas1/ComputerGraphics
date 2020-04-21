@@ -34,9 +34,4 @@ void main()
     // transform normal to camera coordinates
     v2f_normal = normalize(mat_normals * normal); //n
     gl_Position = mat_mvp * position_v4;
-
-	// v2f_dir_from_view = mat_normals * position;//v
-	// v2f_dir_to_light = vec3(light_position[0],light_position[1],light_position[2]) ; //r
-	// v2f_normal = mat_normals * normal; //n
-	// gl_Position = mat_mvp * position_v4; // TODO apply mvp matrix
 }

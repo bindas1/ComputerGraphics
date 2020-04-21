@@ -21,7 +21,7 @@ void main()
 	/* TODO
 	Compute the terrain color ("material") and shininess based on the height as
 	described in the handout.
-	
+
 	Water:
 			color = terrain_color_water
 			shininess = 8.0
@@ -49,31 +49,43 @@ void main()
 		material_color = terrain_color_water;
 		shininess = 8.0;
 	} else {
-		material_color = mix(terrain_color_grass, terrain_color_mountain, noise_val - terrain_water_level);
+		float weight = (height - terrain_water_level) * 2.;
+    material_color = (1. - weight) * terrain_color_grass + weight * terrain_color_mountain;
 	}
 
-	//ambient light  = Ia * ma = ambient * Il * ma
-    vec3 ma_md_ms = material_color;
-    vec3 Il_times_ma_md_ms = vec3(light_color.r * ma_md_ms.r, light_color.g * ma_md_ms.g, light_color.b * ma_md_ms.b);
+	// //ambient light  = Ia * ma = ambient * Il * ma
+	// vec3 ma_md_ms = material_color;
+	// vec3 Il_times_ma_md_ms = light_color * ma_md_ms;
 
-    vec3 ambient_light = ambient * Il_times_ma_md_ms;
+	// vec3 ambient_light = ambient * Il_times_ma_md_ms;
 
-    vec3 vLight = normalize(v2f_dir_to_light);
-    float dotNL = dot(normalize(v2f_normal), vLight);
-    vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
-    vec3 v = normalize(v2f_dir_from_view);
-    vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
+	// vec3 vLight = normalize(v2f_dir_to_light);
+	// float dotNL = dot(normalize(v2f_normal), vLight);
+	// vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
+	// vec3 v = normalize(v2f_dir_from_view);
+	// vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
 
-    vec3 intens = ambient_light + diffuse_light;
+	// vec3 intens = ambient_light + diffuse_light;
 
-    if (dot(r,v) > 0.0) {
-        vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_ma_md_ms;
-        intens += specular_light;
-    }
+	// if (dot(r,v) > 0.0) {
+	// 		vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_ma_md_ms;
+	// 		intens += specular_light;
+	// }
+		vec3 color = ambient * material_color;
 
-	gl_FragColor = vec4(intens, 1.); // output: RGBA in 0..1 range
+		vec3 N = -sign(dot(v2f_normal, v2f_dir_from_view)) *  // Orient the normal so it always points opposite the camera rays
+             normalize(v2f_normal);
+    vec3 vLight = normalize(v2f_dir_to_light - v2f_dir_from_view);
+    float dotNL = dot(vLight,N);
 
-	/*vec3 color = material_color * light_color;
-	gl_FragColor = vec4(color, 1.); // output: RGBA in 0..1 range*/
+    // vec3 r = 2.0 * dotNL * N - vLight;
+    // vec3 v = normalize(v2f_dir_from_view);
+
+		if (dotNL > 0.0)
+				color += light_color * material_color * dotNL;
+		// if (dot(v, r) > 0.0)
+		// 		color += light_color * material_color * pow(dot(r,v), shininess);
+
+    gl_FragColor = vec4(color, 1.0);
+
 }
-
