@@ -53,39 +53,21 @@ void main()
     material_color = (1. - weight) * terrain_color_grass + weight * terrain_color_mountain;
 	}
 
-	// //ambient light  = Ia * ma = ambient * Il * ma
-	// vec3 ma_md_ms = material_color;
-	// vec3 Il_times_ma_md_ms = light_color * ma_md_ms;
+	vec3 color = ambient * material_color;
 
-	// vec3 ambient_light = ambient * Il_times_ma_md_ms;
+	vec3 n = normalize(v2f_normal);
+	vec3 l = normalize(v2f_dir_to_light);
+	float dotNL = dot(l,n);
 
-	// vec3 vLight = normalize(v2f_dir_to_light);
-	// float dotNL = dot(normalize(v2f_normal), vLight);
-	// vec3 r = 2.0 * dotNL * normalize(v2f_normal) - vLight;
-	// vec3 v = normalize(v2f_dir_from_view);
-	// vec3 diffuse_light = dotNL * Il_times_ma_md_ms;
+	vec3 r = 2.0 * dotNL * n - l;
+	vec3 v = -normalize(v2f_dir_from_view);
 
-	// vec3 intens = ambient_light + diffuse_light;
+	if (dotNL > 0.0){
+		color += light_color * material_color * dotNL;
+	}
+	if (dot(v, r) > 0.0)
+		color += light_color * material_color * pow(dot(r,v), shininess);
 
-	// if (dot(r,v) > 0.0) {
-	// 		vec3 specular_light =  pow(dot(r, v), shininess) * Il_times_ma_md_ms;
-	// 		intens += specular_light;
-	// }
-		vec3 color = ambient * material_color;
-
-		vec3 N = -sign(dot(v2f_normal, v2f_dir_from_view)) *  // Orient the normal so it always points opposite the camera rays
-             normalize(v2f_normal);
-    vec3 vLight = normalize(v2f_dir_to_light - v2f_dir_from_view);
-    float dotNL = dot(vLight,N);
-
-    // vec3 r = 2.0 * dotNL * N - vLight;
-    // vec3 v = normalize(v2f_dir_from_view);
-
-		if (dotNL > 0.0)
-				color += light_color * material_color * dotNL;
-		// if (dot(v, r) > 0.0)
-		// 		color += light_color * material_color * pow(dot(r,v), shininess);
-
-    gl_FragColor = vec4(color, 1.0);
+	gl_FragColor = vec4(color, 1.0);
 
 }
