@@ -281,5 +281,5 @@ vec3 tex_marble(vec2 point) {
 	*/
 	vec2 q = vec2(perlin_fbm(point), perlin_fbm(vec2(point.x + 1.7, point.y + 4.6)));
 	float alpha = 0.5*(1. + perlin_fbm(vec2(point.x + 4. * q.x, point.y + 4. * q.y)));
-	return mix(brown_dark, white, alpha);
+	return mix(white, brown_dark, alpha);
 }
