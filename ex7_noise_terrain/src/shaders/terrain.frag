@@ -50,7 +50,7 @@ void main()
 		shininess = 8.0;
 	} else {
 		float weight = (height - terrain_water_level) * 2.;
-    material_color = (1. - weight) * terrain_color_grass + weight * terrain_color_mountain;
+    material_color = mix(terrain_color_grass, terrain_color_mountain, weight);
 	}
 
 	vec3 color = ambient * material_color;
@@ -64,9 +64,10 @@ void main()
 
 	if (dotNL > 0.0){
 		color += light_color * material_color * dotNL;
+		if (dot(v, r) > 0.0){
+			color += light_color * material_color * pow(dot(r,v), shininess);
+		}
 	}
-	if (dot(v, r) > 0.0)
-		color += light_color * material_color * pow(dot(r,v), shininess);
 
 	gl_FragColor = vec4(color, 1.0);
 
