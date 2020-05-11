@@ -112,3 +112,5 @@ https://learnopengl.com/In-Practice/2D-Game/Particles
 
 https://www.3dgep.com/simulating-particle-effects-using-opengl/
 
+https://i.gyazo.com/665b12a82c91aee2258816ea3ca6ea2d.gif)](https://gyazo.com/665b12a82c91aee2258816ea3ca6ea2d)
+
