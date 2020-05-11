@@ -1,4 +1,4 @@
-https://discordapp.com/channels/@me/689505435551924454/709501071466168394
+[![Image from Gyazo](https://i.gyazo.com/665b12a82c91aee2258816ea3ca6ea2d.gif)]
 
 
 # Perlin-noise based realistic mountain terrain
